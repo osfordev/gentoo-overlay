@@ -1,0 +1,12 @@
+#arch       profile_directory                       status
+
+# x86 Profiles
+x86         x86                                     stable
+x86         x86/server                              stable
+x86         x86/workstation                         stable
+
+# amd64 Profiles
+amd64       amd64                                   stable
+amd64       amd64/server                            stable
+amd64       amd64/workstation                       stable
+

@@ -1,0 +1,23 @@
+*app-admin/sudo
+*app-arch/tar
+*app-editors/nano
+*app-misc/mc
+*app-misc/screen
+*app-portage/gentoolkit
+*net-analyzer/netcat
+*net-analyzer/tcpdump
+*net-dns/bind-tools
+*net-misc/dhcpcd
+*net-misc/ntp
+*net-misc/telnet-bsd
+*net-nds/openldap
+*sys-apps/pciutils
+*sys-apps/pv
+
+# Replacement of both nss_ldap and nss_pam
+*sys-auth/nss-pam-ldapd
+
+*sys-fs/cryptsetup
+*sys-fs/lvm2
+*sys-process/cronie
+*sys-process/htop

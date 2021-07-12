@@ -1,0 +1,1 @@
+USE="${USE} X a52 cups dbus egl elogind ffmpeg gnome-keyring gtk harfbuzz jpeg libkms pulseaudio qt5 wayland xa xkb"
