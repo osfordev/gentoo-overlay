@@ -1,3 +1,4 @@
+*app-admin/metalog
 *app-admin/sudo
 *app-arch/tar
 *app-editors/nano
@@ -14,8 +15,16 @@
 *sys-apps/pciutils
 *sys-apps/pv
 
+# https://github.com/nhorman/rng-tools
+# It monitors a set of entropy sources,
+# and supplies entropy from them to the
+# system kernel's /dev/random machinery.
+*sys-apps/rng-tools
+
 # Replacement of both nss_ldap and nss_pam
 *sys-auth/nss-pam-ldapd
+
+*sys-boot/syslinux
 
 *sys-fs/cryptsetup
 *sys-fs/lvm2

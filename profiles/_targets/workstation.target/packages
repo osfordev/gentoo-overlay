@@ -1,18 +1,23 @@
-*app-admin/sysklogd
 *app-arch/p7zip
 *app-emulation/docker
 *app-emulation/docker-compose
+*app-emulation/qemu
+*dev-util/android-studio
+*gui-apps/grim
+*gui-apps/slurp
+*gui-apps/wl-clipboard
 *gui-wm/sway
+
+*media-fonts/fontawesome
+
+# https://pipewire.org/
+# Multimedia processing graphs
+*media-video/pipewire
+
+*net-im/telegram-desktop
+
 *net-misc/tigervnc
-*net-wireless/bluez
-*net-wireless/iw
-*net-wireless/wireless-tools
-*net-wireless/wpa_supplicant
-*sys-apps/pcmciautils
 
-*sys-apps/rng-tools
-
-*sys-boot/syslinux
 *sys-firmware/intel-microcode
 *sys-fs/ntfs3g
 *sys-kernel/linux-firmware
@@ -21,4 +26,5 @@
 *virtual/jre
 *www-client/firefox-bin
 *www-client/google-chrome
+*x11-misc/rofi
 *x11-terms/alacritty

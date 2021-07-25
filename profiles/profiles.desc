@@ -4,9 +4,12 @@
 x86         x86                                     stable
 x86         x86/server                              stable
 x86         x86/workstation                         stable
+x86         x86/workstation/laptop                  stable
+x86         x86/workstation/laptop/hp64xx           stable
 
 # amd64 Profiles
 amd64       amd64                                   stable
 amd64       amd64/server                            stable
 amd64       amd64/workstation                       stable
-
+amd64       amd64/workstation/laptop                stable
+amd64       amd64/workstation/laptop/hp64xx         stable

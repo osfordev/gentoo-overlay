@@ -1,1 +1,4 @@
-USE="${USE} X a52 cups dbus egl elogind ffmpeg gnome-keyring gtk harfbuzz jpeg libkms pulseaudio qt5 wayland xa xkb"
+USE="${USE} X a52 alsa alsa-plugin cups dbus egl elogind ffmpeg gnome-keyring gtk harfbuzz jpeg libkms minizip opus pulseaudio qt5 wayland xa xkb"
+
+QEMU_SOFTMMU_TARGETS="arm x86_64"
+QEMU_USER_TARGETS="x86_64"
