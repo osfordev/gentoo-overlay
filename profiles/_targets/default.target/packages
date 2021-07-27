@@ -15,10 +15,7 @@
 *sys-apps/pciutils
 *sys-apps/pv
 
-# https://github.com/nhorman/rng-tools
-# It monitors a set of entropy sources,
-# and supplies entropy from them to the
-# system kernel's /dev/random machinery.
+# It monitors a set of entropy sources, and supplies entropy from them to the system kernel's /dev/random machinery. See https://github.com/nhorman/rng-tools
 *sys-apps/rng-tools
 
 # Replacement of both nss_ldap and nss_pam

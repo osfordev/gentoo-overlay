@@ -18,9 +18,7 @@
 
 *net-misc/tigervnc
 
-*sys-firmware/intel-microcode
 *sys-fs/ntfs3g
-*sys-kernel/linux-firmware
 *sys-power/acpid
 
 *virtual/jre
