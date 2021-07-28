@@ -1,0 +1,5 @@
+..
+../../_targets/arch.target/amd64
+../../_targets/workstation.target
+../../_targets/laptop.target
+../../_targets/hardware-hp64xx.target
