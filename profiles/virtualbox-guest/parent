@@ -1,4 +1,4 @@
 ..
 ../_targets/default.target
 ../_targets/workstation.target
-../_targets/hardware-virtualbox-guest.target
+../_targets/host-virtualbox-guest.target

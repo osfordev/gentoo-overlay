@@ -1,8 +1,6 @@
 *app-arch/p7zip
 *app-emulation/docker
 *app-emulation/docker-compose
-*app-emulation/qemu
-*dev-util/android-studio
 *gui-apps/grim
 *gui-apps/slurp
 *gui-apps/wl-clipboard
