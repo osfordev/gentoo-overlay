@@ -6,8 +6,10 @@ x86         generic/x86/server                              stable
 x86         generic/x86/workstation                         stable
 x86         generic/x86/workstation/laptop                  stable
 x86         generic/x86/workstation/laptop/hp64xx           stable
+x86         generic/x86/workstation/virtualbox-guest        stable
 
 x86         hp64xx/x86                                      stable
+x86         virtualbox-guest/x86                            stable
 
 
 # amd64 Profiles
@@ -16,5 +18,7 @@ amd64       generic/amd64/server                            stable
 amd64       generic/amd64/workstation                       stable
 amd64       generic/amd64/workstation/laptop                stable
 amd64       generic/amd64/workstation/laptop/hp64xx         stable
+amd64       generic/amd64/workstation/virtualbox-guest      stable
 
 amd64       hp64xx/amd64                                    stable
+amd64       virtualbox-guest/amd64                          stable
