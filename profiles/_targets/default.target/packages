@@ -10,6 +10,7 @@
 *net-dns/bind-tools
 *net-misc/dhcpcd
 *net-misc/ntp
+*net-misc/openssh
 *net-misc/telnet-bsd
 *net-nds/openldap
 *sys-apps/pciutils

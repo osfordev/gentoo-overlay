@@ -16,6 +16,7 @@
 
 *net-misc/tigervnc
 
+*sys-apps/dbus
 *sys-fs/ntfs3g
 *sys-power/acpid
 
