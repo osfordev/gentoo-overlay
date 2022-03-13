@@ -1,6 +1,3 @@
-*app-arch/p7zip
-*app-emulation/docker
-*app-emulation/docker-compose
 *gui-apps/grim
 *gui-apps/slurp
 *gui-apps/wl-clipboard
@@ -18,7 +15,6 @@
 
 *sys-apps/dbus
 *sys-fs/ntfs3g
-*sys-power/acpid
 
 *virtual/jre
 *www-client/firefox-bin

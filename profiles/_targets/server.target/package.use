@@ -1,0 +1,2 @@
+dev-util/cmake              -qt5
+net-nds/openldap            -minimal -berkdb -crypt overlays ssl syslog -tcpd -cxx -debug -experimental -gnutls -icu -iodbc -kerberos -odbc -perl -samba -sasl -selinux -slp -smbkrb5passwd

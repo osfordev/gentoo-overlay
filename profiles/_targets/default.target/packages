@@ -1,5 +1,6 @@
 *app-admin/metalog
 *app-admin/sudo
+*app-arch/p7zip
 *app-arch/tar
 *app-editors/nano
 *app-misc/mc
@@ -26,5 +27,6 @@
 
 *sys-fs/cryptsetup
 *sys-fs/lvm2
+*sys-power/acpid
 *sys-process/cronie
 *sys-process/htop
