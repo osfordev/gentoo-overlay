@@ -6,6 +6,8 @@
 *app-misc/mc
 *app-misc/screen
 *app-portage/gentoolkit
+*dev-vcs/git
+*dev-vcs/git-lfs
 *net-analyzer/netcat
 *net-analyzer/tcpdump
 *net-dns/bind-tools
@@ -22,8 +24,6 @@
 
 # Replacement of both nss_ldap and nss_pam
 *sys-auth/nss-pam-ldapd
-
-*sys-boot/syslinux
 
 *sys-fs/cryptsetup
 *sys-fs/lvm2

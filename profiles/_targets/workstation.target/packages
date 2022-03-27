@@ -2,14 +2,19 @@
 *gui-apps/slurp
 *gui-apps/wl-clipboard
 *gui-wm/sway
+# *gui-apps/swayidle
+# *gui-apps/swaylock
 
 *media-fonts/fontawesome
 
-# https://pipewire.org/
-# Multimedia processing graphs
+# Portable sound event library http://0pointer.de/lennart/projects/libcanberra/ (used hidden by sway@1.7)
+*media-libs/libcanberra
+
+# Multimedia processing graphs https://pipewire.org/
 *media-video/pipewire
 
 *net-im/telegram-desktop
+*net-im/zoom
 
 *net-misc/tigervnc
 
@@ -19,5 +24,7 @@
 *virtual/jre
 *www-client/firefox-bin
 *www-client/google-chrome
+*x11-misc/dmenu
 *x11-misc/rofi
 *x11-terms/alacritty
+*x11-terms/kitty
