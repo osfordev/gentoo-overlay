@@ -1,0 +1,9 @@
+USE="${USE} ipv6 sqlite -systemd text unicode"
+
+#
+# The HP Pro Book 6470b has
+# - VGA compatible controller [0300]: Intel Corporation 3rd Gen Core processor Graphics Controller [8086:0166] (rev 09)
+#
+# According to Feature support (https://wiki.gentoo.org/wiki/Intel), Gen 3 is used "intel i915"
+#
+VIDEO_CARDS="intel i915"
