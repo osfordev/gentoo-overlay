@@ -1,1 +1,2 @@
 # sys-firmware/b43-firmware   ~amd64 ~arm ~x86
+x11-apps/igt-gpu-tools         ~amd64
