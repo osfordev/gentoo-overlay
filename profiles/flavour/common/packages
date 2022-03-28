@@ -1,0 +1,32 @@
+*app-admin/metalog
+*app-admin/sudo
+*app-arch/p7zip
+*app-arch/tar
+*app-editors/nano
+*app-misc/mc
+*app-misc/screen
+*app-portage/gentoolkit
+*dev-vcs/git
+*dev-vcs/git-lfs
+*net-analyzer/netcat
+*net-analyzer/tcpdump
+*net-dns/bind-tools
+*net-misc/dhcpcd
+*net-misc/ntp
+*net-misc/openssh
+*net-misc/telnet-bsd
+*net-nds/openldap
+*sys-apps/pciutils
+*sys-apps/pv
+
+# It monitors a set of entropy sources, and supplies entropy from them to the system kernel's /dev/random machinery. See https://github.com/nhorman/rng-tools
+*sys-apps/rng-tools
+
+# Replacement of both nss_ldap and nss_pam
+*sys-auth/nss-pam-ldapd
+
+*sys-fs/cryptsetup
+*sys-fs/lvm2
+*sys-power/acpid
+*sys-process/cronie
+*sys-process/htop

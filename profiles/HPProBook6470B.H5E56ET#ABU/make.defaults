@@ -1,0 +1,13 @@
+#
+# The HP Pro Book 6470b H5E56ET#ABU/CNU334926Z has
+# - VGA compatible controller [0300]: Intel Corporation 3rd Gen Core processor Graphics Controller [8086:0166] (rev 09)
+#
+# According to Feature support (https://wiki.gentoo.org/wiki/Intel), Gen 3 is used "intel i915"
+#   make.conf: VIDEO_CARDS="intel i915"
+#   kernel:    CONFIG_EXTRA_FIRMWARE=i915/skl_dmc_ver1_27.bin
+#
+VIDEO_CARDS="intel i915"
+
+
+# TBD
+QEMU_USER_TARGETS="x86_64"

@@ -22,3 +22,8 @@ amd64       generic/amd64/workstation/virtualbox-guest      stable
 amd64       asusx402ca/amd64                                stable
 amd64       hp64xx/amd64                                    stable
 amd64       virtualbox-guest/amd64                          stable
+
+
+# 
+amd64       HPProBook6470B.H5E56ET#ABU                      stable
+amd64       HPProBook6470B.H5E56ET#ABU/developer            stable

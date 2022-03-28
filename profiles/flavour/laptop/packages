@@ -1,0 +1,7 @@
+*app-laptop/laptop-mode-tools
+*net-wireless/bluez
+*net-wireless/iw
+*net-wireless/wireless-tools
+*net-wireless/wpa_supplicant
+*sys-apps/pcmciautils
+*sys-power/thermald
