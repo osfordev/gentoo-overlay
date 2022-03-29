@@ -1,2 +1,4 @@
 *app-editors/vscode
 *dev-util/android-studio
+*dev-vcs/git
+*dev-vcs/git-lfs

@@ -26,6 +26,7 @@
 *sys-auth/nss-pam-ldapd
 
 *sys-fs/cryptsetup
+*sys-fs/dosfstools
 *sys-fs/lvm2
 *sys-power/acpid
 *sys-process/cronie
