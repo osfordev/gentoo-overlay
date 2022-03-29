@@ -13,6 +13,7 @@
 # Multimedia processing graphs https://pipewire.org/
 *media-video/pipewire
 
+*net-im/slack
 *net-im/telegram-desktop
 *net-im/zoom
 
