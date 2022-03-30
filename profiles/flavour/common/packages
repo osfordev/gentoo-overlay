@@ -6,6 +6,8 @@
 *app-misc/mc
 *app-misc/screen
 *app-portage/gentoolkit
+# Binary-based Rust (to decrease build time and prevent Rust compilation issues like https://bugs.gentoo.org/809212)
+*dev-lang/rust-bin
 *dev-vcs/git
 *dev-vcs/git-lfs
 *net-analyzer/netcat
