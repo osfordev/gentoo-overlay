@@ -22,6 +22,8 @@
 # It monitors a set of entropy sources, and supplies entropy from them to the system kernel's /dev/random machinery. See https://github.com/nhorman/rng-tools
 *sys-apps/rng-tools
 
+*sys-apps/usbutils
+
 # Replacement of both nss_ldap and nss_pam
 *sys-auth/nss-pam-ldapd
 

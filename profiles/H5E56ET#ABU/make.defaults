@@ -21,15 +21,21 @@ CPU_FLAGS_X86="aes avx f16c mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1
 MAKEOPTS="-j4"
 
 #
-# The HP Pro Book 6470b H5E56ET#ABU has
+# HP Pro Book 6470b H5E56ET#ABU has
 # - VGA compatible controller [0300]: Intel Corporation 3rd Gen Core processor Graphics Controller [8086:0166] (rev 09)
 #
 # According to Feature support (https://wiki.gentoo.org/wiki/Intel), Gen 3 is used "intel i915"
 #   make.conf: VIDEO_CARDS="intel i915"
 #   kernel:    CONFIG_EXTRA_FIRMWARE=i915/skl_dmc_ver1_27.bin
 #
-VIDEO_CARDS="intel i915"
+VIDEO_CARDS="intel i915 -amdgpu -dummy -fbdev -nouveau -radeon -radeonsi -v4l -vesa"
 
 
 # TBD
 QEMU_USER_TARGETS="x86_64"
+
+#
+# HP Pro Book 6470b H5E56ET#ABU has
+# - Broadcom 43228 WLAN
+#
+USE="bluetooth"
