@@ -1,0 +1,42 @@
+#
+# The HP 255 G8 27K51EA#A2Q has
+# - AMD Ryzen 3 3250U with Radeon Graphics
+#    vendor_id	: AuthenticAMD
+#    cpu family	: 23
+#    model		: 24
+#    model name	: AMD Ryzen 3 3250U with Radeon Graphics
+#    stepping	: 1
+#
+# gcc -march=native -E -v - </dev/null 2>&1 | sed -n 's/.* -v - //p'
+CFLAGS="-O2 -pipe -march=znver1 -mmmx -mpopcnt -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mavx -mavx2 -msse4a -mno-fma4 -mno-xop -mfma -mno-avx512f -mbmi -mbmi2 -maes -mpclmul -mno-avx512vl -mno-avx512bw -mno-avx512dq -mno-avx512cd -mno-avx512er -mno-avx512pf -mno-avx512vbmi -mno-avx512ifma -mno-avx5124vnniw -mno-avx5124fmaps -mno-avx512vpopcntdq -mno-avx512vbmi2 -mno-gfni -mno-vpclmulqdq -mno-avx512vnni -mno-avx512bitalg -mno-avx512bf16 -mno-avx512vp2intersect -mno-3dnow -madx -mabm -mno-cldemote -mclflushopt -mno-clwb -mclzero -mcx16 -mno-enqcmd -mf16c -mfsgsbase -mfxsr -mno-hle -msahf -mno-lwp -mlzcnt -mmovbe -mno-movdir64b -mno-movdiri -mmwaitx -mno-pconfig -mno-pku -mno-prefetchwt1 -mprfchw -mno-ptwrite -mno-rdpid -mrdrnd -mrdseed -mno-rtm -mno-serialize -mno-sgx -msha -mno-shstk -mno-tbm -mno-tsxldtrk -mno-vaes -mno-waitpkg -mno-wbnoinvd -mxsave -mxsavec -mxsaveopt -mxsaves -mno-amx-tile -mno-amx-int8 -mno-amx-bf16 -mno-uintr -mno-hreset -mno-kl -mno-widekl -mno-avxvnni --param l1-cache-size=32 --param l1-cache-line-size=64 --param l2-cache-size=512 -mtune=znver1"
+CXXFLAGS="${CFLAGS}"
+FCFLAGS="${CFLAGS}"
+FFLAGS="${CFLAGS}"
+#
+# https://wiki.gentoo.org/wiki/CPU_FLAGS_X86
+#
+CPU_FLAGS_X86="aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3"
+
+# Four CPUs
+MAKEOPTS="-j4"
+
+#
+# The HP 255 G8 27K51EA#A2Q has
+# - VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Picasso/Raven 2 [Radeon Vega Series / Radeon Vega Mobile Series] [1002:15d8] (rev c4)
+#
+# According to Feature support (https://wiki.gentoo.org/wiki/AMDGPU)
+#   make.conf:     VIDEO_CARDS="amdgpu radeonsi"
+#   Kernel driver: amdgpu
+#   kernel:        CONFIG_EXTRA_FIRMWARE="amdgpu/raven2_asd.bin amdgpu/raven2_ce.bin amdgpu/raven2_gpu_info.bin amdgpu/raven2_me.bin amdgpu/raven2_mec.bin amdgpu/raven2_mec2.bin amdgpu/raven2_pfp.bin amdgpu/raven2_rlc.bin amdgpu/raven2_sdma.bin amdgpu/raven2_ta.bin amdgpu/raven2_vcn.bin"
+#
+VIDEO_CARDS="amdgpu radeon radeonsi -dummy -fbdev -intel -nouveau -v4l -vesa"
+
+
+# TBD
+QEMU_USER_TARGETS="x86_64"
+
+#
+# The HP 255 G8 27K51EA#A2Q has
+# - Realtek Semiconductor Corp. Realtek Bluetooth 4.2 Adapter
+#
+USE="bluetooth vaapi vdpau vulkan"

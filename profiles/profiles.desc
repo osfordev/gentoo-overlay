@@ -24,6 +24,10 @@ amd64       hp64xx/amd64                                    stable
 amd64       virtualbox-guest/amd64                          stable
 
 
-# 
+# HP Pro Book 6470b
 amd64       H5E56ET#ABU                                     stable
 amd64       H5E56ET#ABU/developer                           stable
+
+# HP 255 G8
+amd64       27K51EA#A2Q                                     stable
+amd64       27K51EA#A2Q/developer                           stable
