@@ -6,6 +6,7 @@
 # *gui-apps/swaylock
 
 *media-fonts/fontawesome
+*media-fonts/noto-emoji
 
 # Portable sound event library http://0pointer.de/lennart/projects/libcanberra/ (used hidden by sway@1.7)
 *media-libs/libcanberra
@@ -29,3 +30,4 @@
 *x11-misc/rofi
 # *x11-terms/alacritty
 *x11-terms/kitty
+*x11-misc/xdg-user-dirs
