@@ -1,6 +1,0 @@
-..
-../../_targets/arch.target/amd64
-../../_targets/docker.target
-../../_targets/host-hp64xx.target
-../../_targets/laptop.target
-../../_targets/workstation.target

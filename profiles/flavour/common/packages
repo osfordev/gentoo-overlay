@@ -16,6 +16,7 @@
 *net-misc/dhcpcd
 *net-misc/ntp
 *net-misc/openssh
+*net-vpn/openvpn
 *net-misc/telnet-bsd
 *net-nds/openldap
 *sys-apps/pciutils

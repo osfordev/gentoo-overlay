@@ -1,0 +1,26 @@
+CFLAGS="-O2 -pipe"
+CXXFLAGS="${CFLAGS}"
+FCFLAGS="${CFLAGS}"
+FFLAGS="${CFLAGS}"
+#
+# https://wiki.gentoo.org/wiki/CPU_FLAGS_X86
+#
+CPU_FLAGS_X86=""
+
+MAKEOPTS="-j1"
+
+#
+# The Virtual Box Guest has
+# - VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Picasso/Raven 2 [Radeon Vega Series / Radeon Vega Mobile Series] [1002:15d8] (rev c4)
+#
+# According to https://wiki.gentoo.org/wiki/VirtualBox#Guest_Additions
+#   make.conf:     VIDEO_CARDS="vmware" or VIDEO_CARDS="virtualbox"
+#   Kernel driver: ?
+#   kernel:        CONFIG_EXTRA_FIRMWARE="?"
+#
+#VIDEO_CARDS="vmware -amdgpu -radeon -radeonsi -dummy -fbdev -intel -nouveau -v4l -vesa"
+VIDEO_CARDS="vmware"
+
+
+#
+#USE="bluetooth"
