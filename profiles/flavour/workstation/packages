@@ -2,10 +2,11 @@
 *gui-apps/slurp
 *gui-apps/wl-clipboard
 *gui-wm/sway
-*gui-apps/waybar
+*x11-misc/i3status
 
 *media-fonts/fontawesome
 *media-fonts/noto-emoji
+*media-gfx/ristretto
 
 # Portable sound event library http://0pointer.de/lennart/projects/libcanberra/ (used hidden by sway@1.7)
 *media-libs/libcanberra
