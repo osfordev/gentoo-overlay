@@ -7,13 +7,11 @@
 *media-fonts/fontawesome
 *media-fonts/noto-emoji
 *media-gfx/ristretto
-
 # Portable sound event library http://0pointer.de/lennart/projects/libcanberra/ (used hidden by sway@1.7)
 *media-libs/libcanberra
-
 # Multimedia processing graphs https://pipewire.org/
 *media-video/pipewire
-
+*media-sound/playerctl
 *net-im/slack
 *net-im/telegram-desktop
 *net-im/zoom
