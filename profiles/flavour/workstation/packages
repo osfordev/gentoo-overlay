@@ -1,6 +1,7 @@
 *gui-apps/grim
 *gui-apps/slurp
 *gui-apps/wl-clipboard
+*gui-libs/xdg-desktop-portal-wlr
 *gui-wm/sway
 *x11-misc/i3status
 
@@ -19,6 +20,7 @@
 *net-misc/tigervnc
 
 *sys-apps/dbus
+*sys-apps/xdg-desktop-portal
 *sys-fs/ntfs3g
 
 *virtual/jre
