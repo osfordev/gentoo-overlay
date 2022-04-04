@@ -1,2 +1,5 @@
+dev-libs/date                  ~amd64 ~arm ~x86
+dev-libs/spdlog                ~amd64 ~arm ~x86
+gui-apps/waybar                ~amd64 ~arm ~x86
 net-im/zoom                    ~amd64 ~arm ~x86
 net-im/slack                   ~amd64 ~arm ~x86
