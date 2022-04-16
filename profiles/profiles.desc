@@ -5,10 +5,14 @@ amd64       VirtualBoxGuest/amd64                           stable
 arm         VirtualBoxGuest/arm                             stable
 x86         VirtualBoxGuest/x86                             stable
 
+# HP 255 G8
+amd64       27K51EA#A2Q                                     stable
+amd64       27K51EA#A2Q/developer                           stable
+
 # HP Pro Book 6470b
 amd64       H5E56ET#ABU                                     stable
 amd64       H5E56ET#ABU/developer                           stable
 
-# HP 255 G8
-amd64       27K51EA#A2Q                                     stable
-amd64       27K51EA#A2Q/developer                           stable
+# HP Pro Book 6470b
+amd64       C3C58ES#AKD                                     stable
+amd64       C3C58ES#AKD/developer                           stable

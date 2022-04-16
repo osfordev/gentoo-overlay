@@ -3,6 +3,7 @@
 *app-arch/p7zip
 *app-arch/tar
 *app-editors/nano
+*app-editors/vim
 *app-misc/mc
 *app-misc/screen
 *app-portage/gentoolkit

@@ -1,1 +1,1 @@
-USE="${USE} ipv6 sqlite -systemd text unicode"
+USE="${USE} caps ipv6 sqlite -systemd text unicode"
