@@ -1,5 +1,6 @@
 *app-admin/metalog
 *app-admin/sudo
+*app-admin/syslog-ng
 *app-arch/p7zip
 *app-arch/tar
 *app-editors/nano
