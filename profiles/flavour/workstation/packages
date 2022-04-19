@@ -2,7 +2,9 @@
 *app-misc/jq
 *gui-apps/grim
 *gui-apps/slurp
+*gui-apps/tuigreet
 *gui-apps/wl-clipboard
+*gui-libs/display-manager-init
 *gui-libs/xdg-desktop-portal-wlr
 *gui-wm/sway
 *x11-misc/i3status
