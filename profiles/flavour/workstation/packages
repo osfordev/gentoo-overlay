@@ -1,6 +1,7 @@
 # jq is a lightweight and flexible command-line JSON processor.
 *app-misc/jq
 *gui-apps/grim
+*gui-apps/mako
 *gui-apps/slurp
 *gui-apps/tuigreet
 *gui-apps/wl-clipboard
