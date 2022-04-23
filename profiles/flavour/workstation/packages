@@ -4,11 +4,13 @@
 *gui-apps/mako
 *gui-apps/slurp
 *gui-apps/tuigreet
+*gui-apps/waybar
+*gui-apps/wayvnc
+*gui-apps/wf-recorder
 *gui-apps/wl-clipboard
 *gui-libs/display-manager-init
 *gui-libs/xdg-desktop-portal-wlr
 *gui-wm/sway
-*x11-misc/i3status
 
 *media-fonts/fontawesome
 *media-fonts/noto-emoji
