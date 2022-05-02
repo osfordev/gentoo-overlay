@@ -1,5 +1,5 @@
 #
-# The HP Pro Book 6470b C3C58ES#AKD has
+# The HP Pro Book 6470b D4H65EC#AKD has
 # - Intel Core i5 (3rd Gen) 3320M
 #    vendor_id  : GenuineIntel
 #    cpu family : 6
@@ -21,7 +21,7 @@ CPU_FLAGS_X86="aes avx f16c mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1
 MAKEOPTS="-j4"
 
 #
-# HP Pro Book 6470b C3C58ES#AKD has
+# HP Pro Book 6470b D4H65EC#AKD has
 # - VGA compatible controller [0300]: Intel Corporation 3rd Gen Core processor Graphics Controller [8086:0166] (rev 09)
 #
 # According to Feature support (https://wiki.gentoo.org/wiki/Intel), Gen 3 is used "intel i915"
@@ -41,7 +41,7 @@ QEMU_USER_TARGETS="i386 x86_64"
 
 
 #
-# HP Pro Book 6470b C3C58ES#AKD has
+# HP Pro Book 6470b D4H65EC#AKD has
 # - Broadcom BCM20702 Bluetooth [0a5c:21e1]
 #
 USE="bluetooth"
