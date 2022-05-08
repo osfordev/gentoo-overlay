@@ -24,7 +24,7 @@ MAKEOPTS="-j4"
 # HP Pro Book 6470b C3C58ES#AKD has
 # - VGA compatible controller [0300]: Intel Corporation 3rd Gen Core processor Graphics Controller [8086:0166] (rev 09)
 #
-# According to Feature support (https://wiki.gentoo.org/wiki/Intel), Gen 3 is used "intel i915"
+# According to Feature support (https://wiki.gentoo.org/wiki/Intel), Gen 3 is used "intel i965"
 #   make.conf: VIDEO_CARDS="intel i965" (MESA i965 is not same as kernel i915. See https://unix.stackexchange.com/questions/618823/why-is-the-mesa-opengl-driver-for-intel-chips-called-i965)
 #   kernel:    CONFIG_EXTRA_FIRMWARE=i915/skl_dmc_ver1_27.bin
 #

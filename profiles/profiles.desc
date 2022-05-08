@@ -20,3 +20,19 @@ amd64       D4H65EC#AKD/developer                           stable
 # HP Pro Book 6470b
 amd64       H5E56ET#ABU                                     stable
 amd64       H5E56ET#ABU/developer                           stable
+
+# Hosts
+amd64       zxlaptop00/developer                            stable
+amd64       zxlaptop01/developer                            stable
+amd64       zxlaptop02/developer                            stable
+amd64       zxlaptop03/developer                            stable
+amd64       zxlaptop04/developer                            stable
+amd64       zxlaptop05/developer                            stable
+amd64       zxlaptop06/developer                            stable
+amd64       zxlaptop07/developer                            stable
+amd64       zxlaptop08/developer                            stable
+amd64       zxlaptop09/developer                            stable
+amd64       zxlaptop10/developer                            stable
+
+amd64       zxtower04                                       stable
+amd64       zxtower04/developer                             stable
