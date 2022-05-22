@@ -1,0 +1,7 @@
+gentoo:default/linux/amd64/17.1
+..
+../flavour/common
+../flavour/workstation
+../flavour/tower
+../flavour/docker
+../flavour/qemu

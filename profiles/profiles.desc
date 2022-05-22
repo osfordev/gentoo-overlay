@@ -34,5 +34,7 @@ amd64       zxlaptop08/developer                            stable
 amd64       zxlaptop09/developer                            stable
 amd64       zxlaptop10/developer                            stable
 
+amd64       zxtower00                                       stable
+
 amd64       zxtower04                                       stable
 amd64       zxtower04/developer                             stable
