@@ -1,0 +1,37 @@
+#
+# The Dell CS24-SC has
+#    vendor_id  : GenuineIntel
+#    cpu family : 6
+#    model      : 23
+#    model name : Intel(R) Xeon(R) CPU L5420  @ 2.50GHz
+#    stepping   : 10
+#
+# gcc -march=native -E -v - </dev/null 2>&1 | sed -n 's/.* -v - //p'
+CFLAGS="-march=core2 -mmmx -mno-popcnt -msse -msse2 -msse3 -mssse3 -msse4.1 -mno-sse4.2 -mno-avx -mno-avx2 -mno-sse4a -mno-fma4 -mno-xop -mno-fma -mno-avx512f -mno-bmi -mno-bmi2 -mno-aes -mno-pclmul -mno-avx512vl -mno-avx512bw -mno-avx512dq -mno-avx512cd -mno-avx512er -mno-avx512pf -mno-avx512vbmi -mno-avx512ifma -mno-avx5124vnniw -mno-avx5124fmaps -mno-avx512vpopcntdq -mno-avx512vbmi2 -mno-gfni -mno-vpclmulqdq -mno-avx512vnni -mno-avx512bitalg -mno-avx512bf16 -mno-avx512vp2intersect -mno-3dnow -mno-adx -mno-abm -mno-cldemote -mno-clflushopt -mno-clwb -mno-clzero -mcx16 -mno-enqcmd -mno-f16c -mno-fsgsbase -mfxsr -mno-hle -msahf -mno-lwp -mno-lzcnt -mno-movbe -mno-movdir64b -mno-movdiri -mno-mwaitx -mno-pconfig -mno-pku -mno-prefetchwt1 -mno-prfchw -mno-ptwrite -mno-rdpid -mno-rdrnd -mno-rdseed -mno-rtm -mno-serialize -mno-sgx -mno-sha -mno-shstk -mno-tbm -mno-tsxldtrk -mno-vaes -mno-waitpkg -mno-wbnoinvd -mxsave -mno-xsavec -mno-xsaveopt -mno-xsaves -mno-amx-tile -mno-amx-int8 -mno-amx-bf16 -mno-uintr -mno-hreset -mno-kl -mno-widekl -mno-avxvnni --param l1-cache-size=32 --param l1-cache-line-size=64 --param l2-cache-size=6144 -mtune=core2"
+CXXFLAGS="${CFLAGS}"
+FCFLAGS="${CFLAGS}"
+FFLAGS="${CFLAGS}"
+#
+# https://wiki.gentoo.org/wiki/CPU_FLAGS_X86
+#
+CPU_FLAGS_X86="mmx mmxext sse sse2 sse3 sse4_1 ssse3"
+
+# Eight CPUs
+MAKEOPTS="-j8"
+
+#
+# The Dell CS24-SC has
+# - VGA compatible controller [0300]: ASPEED Technology, Inc. ASPEED Graphics Family [1a03:2000]
+# According to https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers
+#   make.conf: VIDEO_CARDS=""
+#
+VIDEO_CARDS="-amdgpu -dummy -fbdev -nouveau -radeon -radeonsi -v4l -vesa"
+
+
+#
+# https://wiki.gentoo.org/wiki/QEMU
+# QEMU_SOFTMMU_TARGETS - system emulation targets https://ftp.fau.de/gentoo-portage/profiles/desc/qemu_softmmu_targets.desc
+# QEMU_USER_TARGETS - userspace emulation targets https://ftp.fau.de/gentoo-portage/profiles/desc/qemu_user_targets.desc
+#
+QEMU_SOFTMMU_TARGETS="aarch64 arm i386 x86_64"
+QEMU_USER_TARGETS="i386 x86_64"

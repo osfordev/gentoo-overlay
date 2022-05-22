@@ -17,6 +17,9 @@ amd64       C3C58ES#AKD/developer                           stable
 amd64       D4H65EC#AKD                                     stable
 amd64       D4H65EC#AKD/developer                           stable
 
+# Dell CS24-SC
+amd64       DELL-CS24-SC                                    stable
+
 # HP Pro Book 6470b
 amd64       H5E56ET#ABU                                     stable
 amd64       H5E56ET#ABU/developer                           stable
