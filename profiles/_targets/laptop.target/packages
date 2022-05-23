@@ -1,9 +1,0 @@
-*app-emulation/qemu
-*app-laptop/laptop-mode-tools
-*dev-util/android-studio
-*net-wireless/bluez
-*net-wireless/iw
-*net-wireless/wireless-tools
-*net-wireless/wpa_supplicant
-*sys-apps/pcmciautils
-*sys-power/thermald

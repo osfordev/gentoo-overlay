@@ -1,5 +1,4 @@
 dev-util/cmake                 -qt5
 gui-apps/waybar                network wifi
-net-nds/openldap               overlays
 media-libs/libcanberra         -gtk
 media-video/ffmpeg             chromium codec2 lzma mp3 speex svg theora vorbis vpx webp x264 x265 xvid

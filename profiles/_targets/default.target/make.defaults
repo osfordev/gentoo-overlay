@@ -1,1 +1,0 @@
-USE="${USE} ipv6 sqlite -systemd text unicode"

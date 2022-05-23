@@ -1,1 +1,0 @@
-USE="${USE} X a52 alsa alsa-plugin cups dbus egl elogind ffmpeg gnome-keyring gtk harfbuzz jpeg libkms minizip opus pulseaudio qt5 wayland xkb"
