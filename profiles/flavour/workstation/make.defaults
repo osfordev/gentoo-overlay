@@ -1,1 +1,1 @@
-USE="X a52 alsa alsa-plugin cups dbus egl elogind ffmpeg gnome-keyring gtk harfbuzz jpeg libkms minizip opengl opus pulseaudio qt5 vaapi v4l wayland xkb"
+USE="X a52 alsa alsa-plugin cups dbus egl elogind ffmpeg gnome-keyring gtk harfbuzz jpeg libkms minizip opengl opus pulseaudio qt5 screencast vaapi v4l wayland xkb"
