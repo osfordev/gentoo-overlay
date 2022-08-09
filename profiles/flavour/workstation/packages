@@ -27,6 +27,9 @@
 
 *net-misc/tigervnc
 
+# https://syncthing.net/ - Syncthing is a continuous file synchronization program.
+*net-p2p/syncthing
+
 *sys-apps/dbus
 *sys-apps/xdg-desktop-portal
 *sys-fs/ntfs3g
