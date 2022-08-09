@@ -1,5 +1,6 @@
-# jq is a lightweight and flexible command-line JSON processor.
+# jq - a lightweight and flexible command-line JSON processor.
 *app-misc/jq
+
 *gui-apps/grim
 *gui-apps/mako
 *gui-apps/slurp
@@ -16,11 +17,18 @@
 *media-fonts/fontawesome
 *media-fonts/noto-emoji
 *media-gfx/ristretto
-# Portable sound event library http://0pointer.de/lennart/projects/libcanberra/ (used hidden by sway@1.7)
+
+# http://0pointer.de/lennart/projects/libcanberra/ - Portable sound event library (used hidden by sway@1.7)
 *media-libs/libcanberra
-# Multimedia processing graphs https://pipewire.org/
-*media-video/pipewire
+
 *media-sound/playerctl
+
+# https://pipewire.org/ - Multimedia processing graphs
+*media-video/pipewire
+
+# https://www.videolan.org/vlc/ - VLC media player
+*media-video/vlc
+
 *net-im/slack
 *net-im/telegram-desktop
 *net-im/zoom
