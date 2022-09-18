@@ -15,6 +15,10 @@
 *gui-wm/sway
 
 *media-fonts/fontawesome
+
+# Meta package for fonts to cover most needs
+*media-fonts/fonts-meta
+
 *media-fonts/noto-emoji
 *media-gfx/ristretto
 
