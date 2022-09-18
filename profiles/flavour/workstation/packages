@@ -33,6 +33,10 @@
 *net-im/telegram-desktop
 *net-im/zoom
 
+# A Remote Desktop Protocol Client http://www.rdesktop.org/
+*net-misc/rdesktop
+
+# Remote desktop viewer display system https://tigervnc.org
 *net-misc/tigervnc
 
 # https://syncthing.net/ - Syncthing is a continuous file synchronization program.
