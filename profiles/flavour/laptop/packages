@@ -1,5 +1,6 @@
 *app-laptop/laptop-mode-tools
 *dev-libs/light
+*media-sound/pavucontrol-qt
 *net-wireless/bluez
 *net-wireless/iw
 *net-wireless/wireless-tools
