@@ -1,0 +1,2 @@
+# To be used 2.x version
+app-containers/docker-compose  ~amd64 ~arm ~x86
