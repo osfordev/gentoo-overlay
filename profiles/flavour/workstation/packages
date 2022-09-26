@@ -20,6 +20,7 @@
 *media-fonts/fonts-meta
 
 *media-fonts/noto-emoji
+
 *media-gfx/ristretto
 
 # http://0pointer.de/lennart/projects/libcanberra/ - Portable sound event library (used hidden by sway@1.7)
