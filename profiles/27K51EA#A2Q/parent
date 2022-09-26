@@ -3,4 +3,3 @@ gentoo:default/linux/amd64/17.1
 ../flavour/common
 ../flavour/workstation
 ../flavour/laptop
-../flavour/virtualbox
