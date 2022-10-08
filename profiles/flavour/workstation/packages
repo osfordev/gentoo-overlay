@@ -1,5 +1,8 @@
-# jq - a lightweight and flexible command-line JSON processor.
+# jq - a lightweight and flexible command-line JSON processor. https://stedolan.github.io/jq/
 *app-misc/jq
+
+# yq - a lightweight and portable command-line YAML processor. https://mikefarah.gitbook.io/yq/
+*app-misc/yq
 
 *gui-apps/grim
 *gui-apps/mako
