@@ -5,6 +5,10 @@ amd64       VirtualBoxGuest/amd64                           stable
 arm         VirtualBoxGuest/arm                             stable
 x86         VirtualBoxGuest/x86                             stable
 
+# ASRock PV530
+x86         ASRockPV530                                     stable
+x86         ASRockPV530/bootsrv                             stable
+
 # HP 255 G8
 amd64       27K51EA#A2Q                                     stable
 amd64       27K51EA#A2Q/developer                           stable

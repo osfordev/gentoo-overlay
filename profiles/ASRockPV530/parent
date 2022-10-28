@@ -1,0 +1,4 @@
+gentoo:default/linux/x86/17.0
+..
+../flavour/common
+../flavour/server

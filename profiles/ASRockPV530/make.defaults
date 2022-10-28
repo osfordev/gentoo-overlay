@@ -1,0 +1,27 @@
+#
+# The ASRock PV530 has
+# - ???
+#    vendor_id  : ???
+#    cpu family : ???
+#    model      : ???
+#    model name : ???
+#    stepping   : ???
+#
+# gcc -march=native -E -v - </dev/null 2>&1 | sed -n 's/.* -v - //p'
+CFLAGS="-O2 -march=i686 -mmmx -msse -msse3 -fomit-frame-pointer -pipe"
+CXXFLAGS="${CFLAGS}"
+FCFLAGS="${CFLAGS}"
+FFLAGS="${CFLAGS}"
+#
+# https://wiki.gentoo.org/wiki/CPU_FLAGS_X86
+#
+CPU_FLAGS_X86="sse2 sse3"
+
+# One CPU
+MAKEOPTS="-j1"
+
+#
+# The ASRock PV530 has
+# - VGA compatible controller ???
+#
+#VIDEO_CARDS="???"
