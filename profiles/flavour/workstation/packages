@@ -10,7 +10,11 @@
 *gui-apps/swappy
 *gui-apps/tuigreet
 *gui-apps/waybar
-*gui-apps/wayvnc
+
+# Temporary commented to compilation bug: wayvnc-0.4.0/src/main.c:509:9: error: too few arguments to function ‘nvnc_set_userdata’
+# See https://groups.google.com/g/linux.debian.bugs.dist/c/fTi78yCJmFg
+#*gui-apps/wayvnc
+
 *gui-apps/wf-recorder
 *gui-apps/wl-clipboard
 *gui-libs/display-manager-init
