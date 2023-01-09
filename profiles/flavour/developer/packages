@@ -1,4 +1,5 @@
 *app-editors/vscode
+*dev-db/postgresql
 *dev-util/android-studio
 *dev-vcs/git
 *dev-vcs/git-lfs
