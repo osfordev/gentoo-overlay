@@ -21,7 +21,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     ```shell
     cd profiles
     PROFILES_DIR=$(pwd)
-    for PROFILE_AMD64 in 27K51EA#A2Q B2G18EC#ABA C3C58ES#AKD D4H65EC#AKD H5E56ET#ABU; do
+    for PROFILE_AMD64 in 27K51EA#A2Q B2G18EC#ABA C3C58ES#AKD D4H65EC#AKD H5E56ET#ABU zxtower00 zxtower02 zxtower04; do
         export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_AMD64/kernel.config" 
         echo "Updating $PROFILE_AMD64 ..."
         (cd /usr/src/linux && sudo --preserve-env=KCONFIG_CONFIG make oldconfig && rm "${KCONFIG_CONFIG}.old")
