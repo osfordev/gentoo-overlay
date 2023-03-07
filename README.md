@@ -11,20 +11,78 @@ As result we have to update kernel configurations for each profile to be up to d
 
 Use following snippet to apply `make oldconfig` for each kernel configuration
 
-- Prepare
-    ```shell
-    emerge-webrsync
-    emerge --ask --verbose gentoo-sources
-    eselect kernel XXX
-    ```
 - Arch: amd64
     ```shell
-    cd profiles
+    docker run --rm --interactive --tty \
+      --platform linux/amd64 \
+      --mount type=bind,source="${PWD}",target=/data \
+      zxteamorg/gentoo-sources-bundle
+
+    cd /data/profiles
     PROFILES_DIR=$(pwd)
-    for PROFILE_AMD64 in 27K51EA#A2Q B2G18EC#ABA C3C58ES#AKD D4H65EC#AKD H5E56ET#ABU zxtower00 zxtower02 zxtower04; do
+    for PROFILE_AMD64 in \
+      27K51EA#A2Q \
+      B2G18EC#ABA \
+      C3C58ES#AKD \
+      D4H65EC#AKD \
+      DigitalOceanDroplet \
+      H5E56ET#ABU \
+      zxtower00 \
+      zxtower02 \
+      zxtower04 \
+      ; do
         export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_AMD64/kernel.config" 
         echo "Updating $PROFILE_AMD64 ..."
-        (cd /usr/src/linux && sudo --preserve-env=KCONFIG_CONFIG make oldconfig && rm "${KCONFIG_CONFIG}.old")
+        (cd /usr/src/linux && make oldconfig && rm -f "${KCONFIG_CONFIG}.old")
     done
     ```
 - Arch: x86
+    ```shell
+    docker run --rm --interactive --tty \
+      --platform linux/386 \
+      --mount type=bind,source="${PWD}",target=/data \
+      zxteamorg/gentoo-sources-bundle
+
+    cd /data/profiles
+    PROFILES_DIR=$(pwd)
+    for PROFILE_X86 in \
+      ASRockPV530 \
+      ; do
+        export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_X86/kernel.config" 
+        echo "Updating $PROFILE_X86 ..."
+        (cd /usr/src/linux && make oldconfig && rm -f "${KCONFIG_CONFIG}.old")
+    done
+    ```
+
+### Test kernel build via Docker
+
+```shell
+# Choose one of
+export PROFILE=27K51EA#A2Q
+export PROFILE=B2G18EC#ABA
+export PROFILE=C3C58ES#AKD
+export PROFILE=D4H65EC#AKD
+export PROFILE=DigitalOceanDroplet
+export PROFILE=H5E56ET#ABU
+export PROFILE=zxtower00
+export PROFILE=zxtower02
+export PROFILE=zxtower04
+
+# See https://packages.gentoo.org/packages/sys-kernel/gentoo-sources
+export KERNEL_VERSION=5.15.94
+
+docker run --rm --interactive --tty \
+  --mount type=bind,source="${PWD}/profiles/${PROFILE}",target=/data \
+  "zxteamorg/gentoo-sources-bundle:${KERNEL_VERSION}"
+
+export KCONFIG_OVERWRITECONFIG=y
+ln -s /data/kernel.config .config
+make menuconfig
+
+emerge-webrsync
+emerge --oneshot sys-firmware/intel-microcode sys-kernel/linux-firmware
+
+make -j$(nproc)
+
+exit
+```
