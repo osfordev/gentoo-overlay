@@ -80,7 +80,7 @@ ln -s /data/kernel.config .config
 make menuconfig
 
 emerge-webrsync
-emerge --oneshot sys-firmware/intel-microcode sys-kernel/linux-firmware
+FEATURES="-ipc-sandbox -network-sandbox -pid-sandbox" ACCEPT_LICENSE="*" emerge --oneshot sys-firmware/intel-microcode sys-kernel/linux-firmware
 
 make -j$(nproc)
 
