@@ -5,8 +5,8 @@ amd64       VirtualBoxGuest/amd64                           stable
 arm         VirtualBoxGuest/arm                             stable
 x86         VirtualBoxGuest/x86                             stable
 
-## Qemu Guest
-#arm         qemu-guest/arm32v7                              stable
+# Qemu Guest
+arm         qemu-guest/arm32v7                              stable
 
 # ASRock PV530
 x86         ASRockPV530                                     stable

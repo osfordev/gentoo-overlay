@@ -16,7 +16,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/amd64 \
       --mount type=bind,source="${PWD}",target=/data \
-      zxteamorg/gentoo-sources-bundle
+      theanurin/gentoo-sources-bundle
 
     cd /data/profiles
     PROFILES_DIR=$(pwd)
@@ -36,12 +36,29 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
         (cd /usr/src/linux && make oldconfig && rm -f "${KCONFIG_CONFIG}.old")
     done
     ```
+- Arch: arm32v7
+    ```shell
+    docker run --rm --interactive --tty \
+      --platform linux/arm/v7 \
+      --mount type=bind,source="${PWD}",target=/data \
+      theanurin/gentoo-sources-bundle
+
+    cd /data/profiles
+    PROFILES_DIR=$(pwd)
+    for PROFILE_ARM32V7 in \
+      qemu-guest/arm32v7 \
+      ; do
+        export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_ARM32V7/kernel.config" 
+        echo "Updating $PROFILE_ARM32V7 ..."
+        (cd /usr/src/linux && make oldconfig && rm -f "${KCONFIG_CONFIG}.old")
+    done
+    ```
 - Arch: x86
     ```shell
     docker run --rm --interactive --tty \
       --platform linux/386 \
       --mount type=bind,source="${PWD}",target=/data \
-      zxteamorg/gentoo-sources-bundle
+      theanurin/gentoo-sources-bundle
 
     cd /data/profiles
     PROFILES_DIR=$(pwd)
@@ -73,7 +90,7 @@ export KERNEL_VERSION=5.15.94
 
 docker run --rm --interactive --tty \
   --mount type=bind,source="${PWD}/profiles/${PROFILE}",target=/data \
-  "zxteamorg/gentoo-sources-bundle:${KERNEL_VERSION}"
+  "theanurin/gentoo-sources-bundle:${KERNEL_VERSION}"
 
 export KCONFIG_OVERWRITECONFIG=y
 ln -s /data/kernel.config .config

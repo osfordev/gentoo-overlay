@@ -1,9 +1,16 @@
 {
     "cSpell.words": [
+        "armv",
         "Cubietruck",
         "eselect",
+        "KBUILD",
         "KCONFIG",
+        "menuconfig",
+        "nproc",
         "oldconfig",
+        "oneshot",
+        "OVERWRITECONFIG",
+        "theanurin",
         "webrsync",
         "zxtower"
     ]
