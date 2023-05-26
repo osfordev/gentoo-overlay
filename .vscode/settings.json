@@ -1,7 +1,11 @@
 {
     "cSpell.words": [
         "armv",
+        "binutils",
+        "chrony",
         "Cubietruck",
+        "devel",
+        "dosfstools",
         "eselect",
         "KBUILD",
         "KCONFIG",
@@ -10,6 +14,7 @@
         "oldconfig",
         "oneshot",
         "OVERWRITECONFIG",
+        "squashfs",
         "theanurin",
         "webrsync",
         "zxtower"

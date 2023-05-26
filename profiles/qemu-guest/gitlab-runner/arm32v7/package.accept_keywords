@@ -1,0 +1,5 @@
+app-misc/jq                     ~arm
+<app-misc/yq-4                  **
+<dev-go/gox-2                   **
+<dev-util/gitlab-runner-16      **
+<dev-vcs/git-lfs-4              **

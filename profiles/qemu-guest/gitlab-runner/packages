@@ -1,0 +1,11 @@
+*app-editors/nano
+*app-misc/jq
+*app-misc/mc
+*app-misc/yq
+*dev-util/gitlab-runner
+*dev-vcs/git-lfs
+*net-misc/chrony
+*net-misc/curl
+*sys-fs/dosfstools
+*sys-fs/squashfs-tools
+*sys-process/htop

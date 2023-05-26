@@ -6,7 +6,12 @@ arm         VirtualBoxGuest/arm                             stable
 x86         VirtualBoxGuest/x86                             stable
 
 # Qemu Guest
+amd64       qemu-guest/amd64                                stable
+amd64       qemu-guest/gitlab-runner/amd64                  stable
 arm         qemu-guest/arm32v7                              stable
+arm         qemu-guest/gitlab-runner/arm32v7                stable
+x86         qemu-guest/x86                                  stable
+x86         qemu-guest/gitlab-runner/x86                    stable
 
 # ASRock PV530
 x86         ASRockPV530                                     stable
