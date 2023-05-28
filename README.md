@@ -81,18 +81,19 @@ export PROFILE=C3C58ES#AKD
 export PROFILE=D4H65EC#AKD
 export PROFILE=DigitalOceanDroplet
 export PROFILE=H5E56ET#ABU
+export PROFILE=qemu-guest/amd64
 export PROFILE=zxtower00
 export PROFILE=zxtower02
 export PROFILE=zxtower04
 
 # See https://packages.gentoo.org/packages/sys-kernel/gentoo-sources
-export KERNEL_VERSION=5.15.94
+export KERNEL_VERSION=5.15.102
 
 docker run --rm --interactive --tty \
+  --env KCONFIG_OVERWRITECONFIG=y \
   --mount type=bind,source="${PWD}/profiles/${PROFILE}",target=/data \
   "theanurin/gentoo-sources-bundle:${KERNEL_VERSION}"
 
-export KCONFIG_OVERWRITECONFIG=y
 ln -s /data/kernel.config .config
 make menuconfig
 
