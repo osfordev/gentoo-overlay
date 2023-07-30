@@ -31,7 +31,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       "zxtower02" \
       "zxtower04" \
       ; do
-        export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_AMD64/kernel.config" 
+        export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_AMD64/kernel.config"
         echo "Updating $PROFILE_AMD64 ..."
         (cd /usr/src/linux && make oldconfig && rm -f "${KCONFIG_CONFIG}.old")
     done
