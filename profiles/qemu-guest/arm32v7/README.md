@@ -10,7 +10,7 @@ docker run \
   --volume cache:/cache \
   --env KBUILD_OUTPUT=/cache/arm32v7 \
   --env KCONFIG_OVERWRITECONFIG=y \
-  theanurin/gentoo-sources-bundle:5.15.102
+  theanurin/gentoo-sources-bundle:5.15.122
 
 # Inside container
 mkdir /cache/arm32v7

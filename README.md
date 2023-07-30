@@ -21,15 +21,15 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     cd /data/profiles
     PROFILES_DIR=$(pwd)
     for PROFILE_AMD64 in \
-      27K51EA#A2Q \
-      B2G18EC#ABA \
-      C3C58ES#AKD \
-      D4H65EC#AKD \
-      DigitalOceanDroplet \
-      H5E56ET#ABU \
-      zxtower00 \
-      zxtower02 \
-      zxtower04 \
+      "27K51EA#A2Q" \
+      "B2G18EC#ABA" \
+      "C3C58ES#AKD" \
+      "D4H65EC#AKD" \
+      "DigitalOceanDroplet" \
+      "H5E56ET#ABU" \
+      "zxtower00" \
+      "zxtower02" \
+      "zxtower04" \
       ; do
         export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_AMD64/kernel.config" 
         echo "Updating $PROFILE_AMD64 ..."
@@ -46,7 +46,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     cd /data/profiles
     PROFILES_DIR=$(pwd)
     for PROFILE_ARM32V7 in \
-      qemu-guest/arm32v7 \
+      "qemu-guest/arm32v7" \
       ; do
         export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_ARM32V7/kernel.config" 
         echo "Updating $PROFILE_ARM32V7 ..."
@@ -63,7 +63,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     cd /data/profiles
     PROFILES_DIR=$(pwd)
     for PROFILE_X86 in \
-      ASRockPV530 \
+      "ASRockPV530" \
       ; do
         export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_X86/kernel.config" 
         echo "Updating $PROFILE_X86 ..."
@@ -87,7 +87,7 @@ export PROFILE=zxtower02
 export PROFILE=zxtower04
 
 # See https://packages.gentoo.org/packages/sys-kernel/gentoo-sources
-export KERNEL_VERSION=5.15.102
+export KERNEL_VERSION=5.15.122
 
 docker run --rm --interactive --tty \
   --env KCONFIG_OVERWRITECONFIG=y \
