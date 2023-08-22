@@ -1,12 +1,15 @@
 {
     "cSpell.words": [
+        "aarch",
         "armv",
         "binutils",
+        "Celeron",
         "chrony",
         "Cubietruck",
         "devel",
         "dosfstools",
         "eselect",
+        "ivybridge",
         "KBUILD",
         "KCONFIG",
         "menuconfig",
@@ -14,8 +17,11 @@
         "oldconfig",
         "oneshot",
         "OVERWRITECONFIG",
+        "SOFTMMU",
         "squashfs",
         "theanurin",
+        "thermald",
+        "userspace",
         "webrsync",
         "zxtower"
     ]
