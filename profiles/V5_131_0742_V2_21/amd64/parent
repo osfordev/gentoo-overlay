@@ -3,6 +3,3 @@ gentoo:default/linux/amd64/17.1/systemd
 ../..
 ../../flavour/common
 ../../flavour/workstation
-../../flavour/developer
-../../flavour/docker
-../../flavour/qemu
