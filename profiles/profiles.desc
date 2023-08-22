@@ -14,8 +14,8 @@ x86         qemu-guest/x86                                  stable
 x86         qemu-guest/gitlab-runner/x86                    stable
 
 # Acer V5-131_0742_V2.21
-amd64       V5-131_0742_V2.21/amd64                         stable
-x86         V5-131_0742_V2.21/x86                           stable
+amd64       V5_131_0742_V2_21/amd64                         stable
+x86         V5_131_0742_V2_21/x86                           stable
 
 # ASRock PV530
 x86         ASRockPV530                                     stable
