@@ -1,1 +1,1 @@
-USE="${USE} caps ipv6 lvm sqlite -systemd text unicode"
+USE="${USE} caps ipv6 lvm sqlite text unicode"
