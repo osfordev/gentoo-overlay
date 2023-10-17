@@ -42,6 +42,7 @@
 # https://www.videolan.org/vlc/ - VLC media player
 *media-video/vlc
 
+*net-im/discord
 *net-im/slack
 *net-im/telegram-desktop
 *net-im/zoom

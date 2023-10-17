@@ -1,5 +1,5 @@
 gentoo:default/linux/amd64/17.1/systemd
 ..
 ../..
-../../flavour/common
+../../flavour/common/amd64
 ../../flavour/workstation
