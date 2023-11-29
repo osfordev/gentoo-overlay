@@ -91,9 +91,10 @@ export PROFILE=zxtower02
 export PROFILE=zxtower04
 
 # See https://packages.gentoo.org/packages/sys-kernel/gentoo-sources
-export KERNEL_VERSION=5.15.135
+export KERNEL_VERSION=5.15.122
 
 docker run --rm --interactive --tty \
+  --platform linux/amd64 \
   --env KCONFIG_OVERWRITECONFIG=y \
   --mount type=bind,source="${PWD}/profiles/${PROFILE}",target=/data \
   "theanurin/gentoo-sources-bundle:${KERNEL_VERSION}"
