@@ -1,9 +1,9 @@
 #arch       profile_directory                               status
 
 # Virtual Box Guest
-amd64       VirtualBoxGuest/amd64                           stable
-arm         VirtualBoxGuest/arm                             stable
-x86         VirtualBoxGuest/x86                             stable
+amd64       virtualbox-guest/amd64                          stable
+arm         virtualbox-guest/arm                            stable
+x86         virtualbox-guest/x86                            stable
 
 # Qemu Guest
 amd64       qemu-guest/amd64                                stable
