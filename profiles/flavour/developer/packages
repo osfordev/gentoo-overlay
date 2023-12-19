@@ -1,5 +1,6 @@
 *app-editors/vscode
 *dev-db/postgresql
+*dev-python/pip
 *dev-python/virtualenv
 *dev-util/android-studio
 *dev-util/idea-community
