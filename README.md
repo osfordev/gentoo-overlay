@@ -16,7 +16,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/amd64 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:amd64
+      theanurin/gentoo-sources-bundle:amd64-5.15.142
 
     cd /data/profiles
     PROFILES_DIR=$(pwd)
@@ -27,6 +27,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       "D4H65EC#AKD" \
       "DigitalOceanDroplet" \
       "H5E56ET#ABU" \
+      "qemu-guest/gitlab-runner/amd64" \
       "V5_131_0742_V2_21/amd64" \
       "VirtualBoxGuest/amd64" \
       "zxtower00" \
@@ -43,12 +44,12 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/arm/v7 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle
+      theanurin/gentoo-sources-bundle:arm32v7-5.15.142
 
     cd /data/profiles
     PROFILES_DIR=$(pwd)
     for PROFILE_ARM32V7 in \
-      "qemu-guest/arm32v7" \
+      "qemu-guest/gitlab-runner/arm32v7" \
       ; do
         export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_ARM32V7/kernel.config" 
         echo "Updating $PROFILE_ARM32V7 ..."
@@ -60,7 +61,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/386 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle
+      theanurin/gentoo-sources-bundle:x86-5.15.142
 
     cd /data/profiles
     PROFILES_DIR=$(pwd)
