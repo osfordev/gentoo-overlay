@@ -11,4 +11,3 @@ gui-libs/greetd                 ~amd64 ~arm ~x86
 gui-libs/neatvnc                ~amd64 ~arm ~x86
 net-im/zoom                     ~amd64 ~arm ~x86
 net-im/slack                    ~amd64 ~arm ~x86
-net-im/telegram-desktop         ~amd64 ~arm ~x86
