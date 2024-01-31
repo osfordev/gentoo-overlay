@@ -16,7 +16,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/amd64 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:amd64-5.15.142
+      theanurin/gentoo-sources-bundle:amd64-5.15.147
 
     cd /data/profiles
     PROFILES_DIR=$(pwd)
@@ -29,7 +29,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       "H5E56ET#ABU" \
       "qemu-guest/gitlab-runner/amd64" \
       "V5_131_0742_V2_21/amd64" \
-      "VirtualBoxGuest/amd64" \
+      "virtualbox-guest/amd64" \
       "zxtower00" \
       "zxtower02" \
       "zxtower04" \
@@ -44,7 +44,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/arm/v7 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:arm32v7-5.15.142
+      theanurin/gentoo-sources-bundle:arm32v7-5.15.147
 
     cd /data/profiles
     PROFILES_DIR=$(pwd)
@@ -61,7 +61,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/386 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:x86-5.15.142
+      theanurin/gentoo-sources-bundle:x86-5.15.147
 
     cd /data/profiles
     PROFILES_DIR=$(pwd)
@@ -92,13 +92,13 @@ export PROFILE=zxtower02
 export PROFILE=zxtower04
 
 # See https://packages.gentoo.org/packages/sys-kernel/gentoo-sources
-export KERNEL_VERSION=5.15.122
+export KERNEL_VERSION=5.15.147
 
 docker run --rm --interactive --tty \
   --platform linux/amd64 \
   --env KCONFIG_OVERWRITECONFIG=y \
   --mount type=bind,source="${PWD}/profiles/${PROFILE}",target=/data \
-  "theanurin/gentoo-sources-bundle:${KERNEL_VERSION}"
+  "theanurin/gentoo-sources-bundle:amd64-${KERNEL_VERSION}"
 
 ln -s /data/kernel.config .config
 make menuconfig
