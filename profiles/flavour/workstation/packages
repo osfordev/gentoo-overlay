@@ -63,7 +63,6 @@
 
 *sys-fs/exfatprogs
 *sys-fs/fuse
-*sys-fs/fuse:0
 *sys-fs/ntfs3g
 
 *virtual/jre
