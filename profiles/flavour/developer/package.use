@@ -1,1 +1,2 @@
 dev-db/postgresql               -pam -server
+net-libs/libssh                 server

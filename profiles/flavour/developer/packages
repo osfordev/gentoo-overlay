@@ -1,4 +1,5 @@
 *app-editors/vscode
+*dev-db/mysql-workbench
 *dev-db/postgresql
 *dev-python/pip
 *dev-python/virtualenv

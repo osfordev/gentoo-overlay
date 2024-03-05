@@ -22,6 +22,8 @@
 *gui-libs/xdg-desktop-portal-wlr
 *gui-wm/sway
 
+*mail-client/thunderbird
+
 *media-fonts/fontawesome
 
 # Meta package for fonts to cover most needs
