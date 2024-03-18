@@ -2,7 +2,7 @@ dev-util/cmake                  -qt5
 gui-apps/waybar                 network wifi
 media-libs/libcanberra          -gtk
 media-libs/libvpx               postproc
-media-video/ffmpeg              chromium codec2 lzma mp3 speex svg theora vorbis vpx webp x264 x265 xvid
+media-video/ffmpeg              codec2 lzma speex vpx xvid
 media-video/pipewire            extra
-media-video/vlc                 libnotify flac mad mp3 theora udev vpx x264 x265 xml
+media-video/vlc                 flac mad udev vpx xml
 x11-terms/kitty                 transfer
