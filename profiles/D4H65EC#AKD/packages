@@ -1,3 +1,4 @@
 *media-libs/libva-intel-driver
+*sys-apps/pcmciautils
 *sys-power/thermald
 *x11-apps/igt-gpu-tools
