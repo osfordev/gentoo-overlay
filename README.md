@@ -25,6 +25,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       "B2G18EC#ABA" \
       "C3C58ES#AKD" \
       "D4H65EC#AKD" \
+      "DELLCS24SC" \
       "DigitalOceanDroplet" \
       "H5E56ET#ABU" \
       "qemu-guest/gitlab-runner/amd64" \
