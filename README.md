@@ -45,11 +45,12 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/arm/v7 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:arm32v7-5.15.147
+      theanurin/gentoo-sources-bundle:arm32v7-5.15.151
 
     cd /data/profiles
     PROFILES_DIR=$(pwd)
     for PROFILE_ARM32V7 in \
+      "cubietruck" \
       "qemu-guest/gitlab-runner/arm32v7" \
       ; do
         export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_ARM32V7/kernel.config" 
@@ -62,7 +63,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/386 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:x86-5.15.147
+      theanurin/gentoo-sources-bundle:x86-5.15.151
 
     cd /data/profiles
     PROFILES_DIR=$(pwd)
