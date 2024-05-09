@@ -25,5 +25,7 @@
         "webrsync",
         "zxtower"
     ],
-    "editor.renderWhitespace": "all"
+    "editor.renderWhitespace": "all",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 5000,
 }
