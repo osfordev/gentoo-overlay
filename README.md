@@ -28,7 +28,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       "DELLCS24SC" \
       "DigitalOceanDroplet" \
       "H5E56ET#ABU" \
-      "qemu-guest/gitlab-runner/amd64" \
+      "qemu-guest/builder/amd64" \
       "V5_131_0742_V2_21/amd64" \
       "virtualbox-guest/amd64" \
       "zxtower00" \
@@ -51,7 +51,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     PROFILES_DIR=$(pwd)
     for PROFILE_ARM32V7 in \
       "cubietruck" \
-      "qemu-guest/gitlab-runner/arm32v7" \
+      "qemu-guest/builder/arm32v7" \
       ; do
         export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_ARM32V7/kernel.config" 
         echo "Updating $PROFILE_ARM32V7 ..."
