@@ -20,7 +20,6 @@
 *net-misc/ntp
 *net-misc/openssh
 *net-misc/socat
-*net-vpn/openvpn
 *net-misc/telnet-bsd
 *net-nds/openldap
 *sys-apps/pciutils
