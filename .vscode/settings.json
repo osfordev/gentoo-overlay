@@ -23,6 +23,7 @@
         "thermald",
         "userspace",
         "webrsync",
+        "zxlaptop",
         "zxtower"
     ],
     "editor.renderWhitespace": "all",
