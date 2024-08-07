@@ -16,7 +16,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/amd64 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:amd64-5.15.158
+      theanurin/gentoo-sources-bundle:amd64-5.15.162
 
     cd /data/profiles
     PROFILES_DIR=$(pwd)
