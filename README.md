@@ -16,7 +16,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/amd64 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:amd64-5.15.162
+      theanurin/gentoo-sources-bundle:amd64-5.15.165
 
     cd /data/profiles
     PROFILES_DIR=$(pwd)
@@ -45,7 +45,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/arm/v7 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:arm32v7-5.15.151
+      theanurin/gentoo-sources-bundle:arm32v7-5.15.165
 
     cd /data/profiles
     PROFILES_DIR=$(pwd)
@@ -63,7 +63,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/386 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:i686-5.15.158
+      theanurin/gentoo-sources-bundle:i686-5.15.165
 
     cd /data/profiles
     PROFILES_DIR=$(pwd)
@@ -94,7 +94,7 @@ export PROFILE=zxtower02
 export PROFILE=zxtower04
 
 # See https://packages.gentoo.org/packages/sys-kernel/gentoo-sources
-export KERNEL_VERSION=5.15.158
+export KERNEL_VERSION=5.15.165
 
 docker run --rm --interactive --tty \
   --platform linux/amd64 \
