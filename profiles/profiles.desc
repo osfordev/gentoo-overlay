@@ -34,8 +34,7 @@ amd64       B2G18EC#ABA/developer                           stable
 
 # HP Pro Book 6470b
 amd64       C3C58ES#AKD                                     stable
-amd64       C3C58ES#AKD/workstation                         stable
-amd64       C3C58ES#AKD/workstation/developer               stable
+amd64       C3C58ES#AKD/developer                           stable
 
 # HP Pro Book 6470b
 amd64       D4H65EC#AKD                                     stable
