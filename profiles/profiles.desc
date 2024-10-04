@@ -26,11 +26,13 @@ arm         cubietruck                                      stable
 
 # HP 255 G8
 amd64       27K51EA#A2Q                                     stable
-amd64       27K51EA#A2Q/developer                           stable
+amd64       27K51EA#A2Q/workstation                         stable
+amd64       27K51EA#A2Q/workstation/developer               stable
 
 # HP Pro Book 6470b
 amd64       B2G18EC#ABA                                     stable
-amd64       B2G18EC#ABA/developer                           stable
+amd64       B2G18EC#ABA/workstation                         stable
+amd64       B2G18EC#ABA/workstation/developer               stable
 
 # HP Pro Book 6470b
 amd64       C3C58ES#AKD                                     stable
@@ -39,7 +41,8 @@ amd64       C3C58ES#AKD/workstation/developer               stable
 
 # HP Pro Book 6470b
 amd64       D4H65EC#AKD                                     stable
-amd64       D4H65EC#AKD/developer                           stable
+amd64       D4H65EC#AKD/workstation                         stable
+amd64       D4H65EC#AKD/workstation/developer               stable
 
 # Dell CS24-SC
 amd64       DELLCS24SC                                      stable
@@ -49,20 +52,21 @@ amd64       DigitalOceanDroplet                             stable
 
 # HP Pro Book 6470b
 amd64       H5E56ET#ABU                                     stable
-amd64       H5E56ET#ABU/developer                           stable
+amd64       H5E56ET#ABU/workstation                         stable
+amd64       H5E56ET#ABU/workstation/developer               stable
 
 # Hosts
-amd64       zxlaptop00/developer                            stable
-amd64       zxlaptop01/developer                            stable
-amd64       zxlaptop02/developer                            stable
-amd64       zxlaptop03/developer                            stable
-amd64       zxlaptop04/developer                            stable
-amd64       zxlaptop05/developer                            stable
-amd64       zxlaptop06/developer                            stable
-amd64       zxlaptop07/developer                            stable
-amd64       zxlaptop08/developer                            stable
-amd64       zxlaptop09/developer                            stable
-amd64       zxlaptop10/developer                            stable
+amd64       zxlaptop00/workstation/developer                stable
+amd64       zxlaptop01/workstation/developer                stable
+amd64       zxlaptop02/workstation/developer                stable
+amd64       zxlaptop03/workstation/developer                stable
+amd64       zxlaptop04/workstation/developer                stable
+amd64       zxlaptop05/workstation/developer                stable
+amd64       zxlaptop06/workstation/developer                stable
+amd64       zxlaptop07/workstation/developer                stable
+amd64       zxlaptop08/workstation/developer                stable
+amd64       zxlaptop09/workstation/developer                stable
+amd64       zxlaptop10/workstation/developer                stable
 
 amd64       zxtower00                                       stable
 amd64       zxtower02                                       stable
