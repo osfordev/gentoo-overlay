@@ -73,3 +73,4 @@ amd64       zxlaptop10/workstation/developer                stable
 amd64       zxtower00                                       stable
 amd64       zxtower02                                       stable
 amd64       zxtower04                                       stable
+amd64       zxtower04/workstation                           stable
