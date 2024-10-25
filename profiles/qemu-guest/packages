@@ -1,0 +1,13 @@
+*app-admin/syslog-ng
+*app-arch/tar
+*app-editors/nano
+*app-editors/vim
+*app-misc/mc
+*app-misc/screen
+*dev-vcs/git
+*net-misc/dhcpcd
+*net-misc/ntp
+*net-misc/opensshs
+*sys-apps/rng-tools
+*sys-process/cronie
+*sys-process/htop

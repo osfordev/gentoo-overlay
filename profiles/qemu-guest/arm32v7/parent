@@ -1,3 +1,2 @@
 gentoo:default/linux/arm/23.0/armv7a_hf
-../..
-../../flavour/common/armv7a
+..
