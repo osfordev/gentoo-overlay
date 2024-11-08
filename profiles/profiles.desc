@@ -46,6 +46,7 @@ amd64       D4H65EC#AKD/workstation/developer               stable
 
 # Dell CS24-SC
 amd64       DELLCS24SC                                      stable
+amd64       DELLCS24SC/server                               stable
 
 # Digital Ocean Droplet
 amd64       DigitalOceanDroplet                             stable
