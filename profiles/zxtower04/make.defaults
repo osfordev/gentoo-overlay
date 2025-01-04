@@ -15,7 +15,7 @@
 #
 # gcc ??????
 #
-CFLAGS=" -O2 -pipe -march=sandybridge -mmmx -mpopcnt -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mavx -maes -mpclmul -mcx16 -mfxsr -msahf -mxsave -mxsaveopt -mno-amx-tile -mno-amx-int8 -mno-amx-bf16 --param l1-cache-size=32 --param l1-cache-line-size=64 --param l2-cache-size=6144 -mtune=sandybridge"
+#CFLAGS="-O2 -pipe -march=sandybridge -mmmx -mpopcnt -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -mavx -maes -mpclmul -mcx16 -mfxsr -msahf -mxsave -mxsaveopt -mno-amx-tile -mno-amx-int8 -mno-amx-bf16 --param l1-cache-size=32 --param l1-cache-line-size=64 --param l2-cache-size=6144 -mtune=sandybridge"
 #
 # gcc 14.2.1 20241221
 #
