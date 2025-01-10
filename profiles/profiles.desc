@@ -52,6 +52,7 @@ amd64       DELLCS24SC/server                               stable
 amd64       DigitalOceanDroplet                             stable
 amd64       DigitalOceanDroplet/server                      stable
 amd64       DigitalOceanDroplet/server/dg00                 stable
+amd64       DigitalOceanDroplet/server/dg04                 stable
 
 # HP Pro Book 6470b
 amd64       H5E56ET#ABU                                     stable
