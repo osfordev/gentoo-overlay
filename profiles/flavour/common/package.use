@@ -1,1 +1,2 @@
-net-nds/openldap               overlays
+net-misc/curl       ldap
+net-nds/openldap    overlays
