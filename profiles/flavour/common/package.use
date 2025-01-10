@@ -1,2 +1,3 @@
+dev-vcs/git         -webdav
 net-misc/curl       ldap
 net-nds/openldap    overlays
