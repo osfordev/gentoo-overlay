@@ -32,6 +32,8 @@
 
 # Replacement of both nss_ldap and nss_pam
 *sys-auth/nss-pam-ldapd
+# Utility to manage SSH public keys stored in LDAP. Using by SSH server to obtain public keys by an user
+*sys-auth/ssh-ldap-pubkey
 
 *sys-fs/cryptsetup
 *sys-fs/dosfstools
