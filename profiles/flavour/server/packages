@@ -1,1 +1,3 @@
+*app-admin/logrotate
+*app-admin/syslog-ng
 *app-metrics/node_exporter
