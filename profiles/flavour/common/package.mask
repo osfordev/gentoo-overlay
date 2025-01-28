@@ -1,2 +1,2 @@
->sys-kernel/gentoo-sources-5.15.173
+>=sys-kernel/gentoo-sources-5.16
 <sys-kernel/gentoo-sources-5.15.173
