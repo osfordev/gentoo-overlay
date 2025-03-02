@@ -63,6 +63,8 @@
 
 *sys-fs/exfatprogs
 *sys-fs/fuse
+# Need for AppImage. See https://wiki.gentoo.org/wiki/AppImage
+*sys-fs/fuse:0
 *sys-fs/ntfs3g
 
 *virtual/jre

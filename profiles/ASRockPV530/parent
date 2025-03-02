@@ -1,4 +1,5 @@
-gentoo:default/linux/x86/23.0/i686
+gentoo:default/linux/x86/23.0
 ..
 ../flavour/common/x86
+../flavour/common-openrc/x86
 ../flavour/server

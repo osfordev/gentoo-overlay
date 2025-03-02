@@ -1,4 +1,7 @@
-CFLAGS="-O2 -pipe"
+#
+# gcc ??????
+#
+CFLAGS=" -O2 -pipe"
 CXXFLAGS="${CFLAGS}"
 FCFLAGS="${CFLAGS}"
 FFLAGS="${CFLAGS}"

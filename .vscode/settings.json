@@ -16,6 +16,7 @@
         "nproc",
         "oldconfig",
         "oneshot",
+        "openrc",
         "OVERWRITECONFIG",
         "SOFTMMU",
         "squashfs",

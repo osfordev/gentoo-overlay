@@ -8,6 +8,9 @@
 #    stepping   : ???
 #
 # gcc -march=native -E -v - </dev/null 2>&1 | sed -n 's/.* -v - //p'
+#
+# gcc ??????
+#
 CFLAGS="-O2 -march=i686 -mmmx -msse -msse3 -fomit-frame-pointer -pipe"
 CXXFLAGS="${CFLAGS}"
 FCFLAGS="${CFLAGS}"
