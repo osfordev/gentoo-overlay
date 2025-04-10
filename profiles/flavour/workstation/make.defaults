@@ -24,6 +24,7 @@ USE="
   opus
   pulseaudio
   qt5
+  qt6
   screencast
   svg
   theora

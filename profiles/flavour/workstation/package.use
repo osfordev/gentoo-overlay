@@ -1,4 +1,4 @@
-dev-util/cmake                  -qt5
+dev-util/cmake                  -gui -qt5 -qt6
 gui-apps/waybar                 network wifi
 media-libs/libcanberra          -gtk
 media-libs/libvpx               postproc
