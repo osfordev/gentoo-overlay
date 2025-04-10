@@ -52,4 +52,9 @@ QEMU_USER_TARGETS="i386 x86_64"
 # The HP 255 G8 27K51EA#A2Q has
 # - Realtek Semiconductor Corp. Realtek Bluetooth 4.2 Adapter
 #
-USE="bluetooth vaapi vdpau vulkan"
+USE="
+  bluetooth
+  vaapi
+  vdpau
+  vulkan
+"

@@ -51,4 +51,7 @@ QEMU_USER_TARGETS="i386 x86_64"
 # HP Pro Book 6470b B2G18EC#ABA has
 # - Broadcom Inc. and subsidiaries BCM43228 802.11a/b/g/n [14e4:4359]
 #
-USE="bluetooth vaapi"
+USE="
+  bluetooth
+  vaapi
+"

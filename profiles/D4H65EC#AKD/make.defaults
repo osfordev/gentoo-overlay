@@ -51,4 +51,7 @@ QEMU_USER_TARGETS="i386 x86_64"
 # HP Pro Book 6470b D4H65EC#AKD has
 # - Broadcom BCM20702 Bluetooth [0a5c:21e1]
 #
-USE="bluetooth vaapi"
+USE="
+  bluetooth
+  vaapi
+"

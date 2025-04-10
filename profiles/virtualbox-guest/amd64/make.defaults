@@ -26,4 +26,6 @@ VIDEO_CARDS="vmware"
 
 
 #
-#USE="bluetooth"
+#USE="
+#  bluetooth
+#"

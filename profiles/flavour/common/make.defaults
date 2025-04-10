@@ -1,1 +1,11 @@
-USE="${USE} caps ipv6 iproute2 lvm openssl sqlite text unicode"
+USE="
+  ${USE}
+  caps
+  ipv6
+  iproute2
+  lvm
+  openssl
+  sqlite
+  text
+  unicode
+"

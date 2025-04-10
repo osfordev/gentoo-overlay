@@ -1,1 +1,3 @@
-USE="tk"
+USE="
+  tk
+"
