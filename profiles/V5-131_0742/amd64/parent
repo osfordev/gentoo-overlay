@@ -1,0 +1,5 @@
+gentoo:default/linux/amd64/23.0
+..
+../..
+../../flavour/common/amd64
+../../flavour/common-openrc/amd64

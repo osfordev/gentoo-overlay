@@ -1,0 +1,3 @@
+*media-libs/libva-intel-driver
+*sys-power/thermald
+*x11-apps/igt-gpu-tools

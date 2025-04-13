@@ -1,7 +1,0 @@
-#
-# https://wiki.gentoo.org/wiki/QEMU
-# QEMU_SOFTMMU_TARGETS - system emulation targets https://ftp.fau.de/gentoo-portage/profiles/desc/qemu_softmmu_targets.desc
-# QEMU_USER_TARGETS - userspace emulation targets https://ftp.fau.de/gentoo-portage/profiles/desc/qemu_user_targets.desc
-#
-QEMU_SOFTMMU_TARGETS="aarch64 arm i386 x86_64"
-QEMU_USER_TARGETS="i386"
