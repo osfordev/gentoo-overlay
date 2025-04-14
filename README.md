@@ -16,7 +16,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/amd64 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:amd64-5.15.173
+      theanurin/gentoo-sources-bundle:amd64-5.15.177
 
     cd /data/profiles
     PROFILES_DIR=$(pwd)
@@ -29,10 +29,10 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       "DigitalOceanDroplet" \
       "H5E56ET#ABU" \
       "qemu-guest/builder/amd64" \
-      "V5_131_0742_V2_21/amd64" \
+      "V5-131_0742/amd64" \
       "virtualbox-guest/amd64" \
-      "zxtower00" \
-      "zxtower04" \
+      "tw00" \
+      "tw04" \
       ; do
         export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_AMD64/kernel.config"
         echo "Updating $PROFILE_AMD64 ..."
@@ -44,7 +44,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/arm/v7 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:arm32v7-5.15.173
+      theanurin/gentoo-sources-bundle:arm32v7-5.15.177
 
     cd /data/profiles
     PROFILES_DIR=$(pwd)
@@ -62,12 +62,13 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/386 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:i686-5.15.173
+      theanurin/gentoo-sources-bundle:i686-5.15.177
 
     cd /data/profiles
     PROFILES_DIR=$(pwd)
     for PROFILE_X86 in \
       "ASRockPV530" \
+      "V5-131_0742/x86" \
       ; do
         export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_X86/kernel.config" 
         echo "Updating $PROFILE_X86 ..."
@@ -93,7 +94,7 @@ export PROFILE=zxtower02
 export PROFILE=zxtower04
 
 # See https://packages.gentoo.org/packages/sys-kernel/gentoo-sources
-export KERNEL_VERSION=5.15.173
+export KERNEL_VERSION=5.15.177
 
 docker run --rm --interactive --tty \
   --platform linux/amd64 \
