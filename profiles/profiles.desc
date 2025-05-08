@@ -16,8 +16,8 @@ x86         qemu-guest/builder/x86                          stable
 # Acer V5-131_0742
 amd64       V5-131_0742/amd64                               stable
 amd64       V5-131_0742/amd64/workstation                   stable
+amd64       V5-131_0742/amd64/workstation/developer         stable
 x86         V5-131_0742/x86                                 stable
-x86         V5-131_0742/x86/workstation                     stable
 
 # ASRock PV530
 x86         ASRockPV530                                     stable
