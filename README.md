@@ -85,6 +85,8 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       "D4H65EC#AKD" \
       "DELLCS24SC" \
       "DigitalOceanDroplet" \
+      "DigitalOceanDroplet/server/dg00" \
+      "DigitalOceanDroplet/server/dg04" \
       "H5E56ET#ABU" \
       "qemu-guest/builder/amd64" \
       "V5-131_0742/amd64" \
@@ -110,7 +112,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       "cubietruck" \
       "qemu-guest/builder/arm32v7" \
       ; do
-        export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_ARM32V7/kernel.config" 
+        export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_ARM32V7/kernel.config"
         echo "Updating $PROFILE_ARM32V7 ..."
         (cd /usr/src/linux && make oldconfig && rm -f "${KCONFIG_CONFIG}.old")
     done
@@ -128,7 +130,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       "ASRockPV530" \
       "V5-131_0742/x86" \
       ; do
-        export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_X86/kernel.config" 
+        export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_X86/kernel.config"
         echo "Updating $PROFILE_X86 ..."
         (cd /usr/src/linux && make oldconfig && rm -f "${KCONFIG_CONFIG}.old")
     done
