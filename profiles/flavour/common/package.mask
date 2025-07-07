@@ -1,2 +1,2 @@
->=sys-kernel/gentoo-sources-6.13
+>=sys-kernel/gentoo-sources-6.12.22
 <sys-kernel/gentoo-sources-6.12.21
