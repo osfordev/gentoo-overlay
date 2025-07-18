@@ -1,5 +1,3 @@
-*media-libs/libva-intel-driver
 *sys-apps/pcmciautils
 *sys-firmware/b43-firmware
 *sys-power/thermald
-*x11-apps/igt-gpu-tools
