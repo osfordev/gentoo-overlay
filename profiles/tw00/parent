@@ -1,0 +1,7 @@
+gentoo:default/linux/amd64/23.0/systemd
+..
+../flavour/common/amd64
+../flavour/common-systemd/amd64
+../flavour/docker
+../flavour/openvpn
+../flavour/qemu

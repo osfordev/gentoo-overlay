@@ -2,6 +2,27 @@
 
 This is a Gentoo Overlay used by [**OS For Developer**](https://github.com/osfordev) project.
 
+## Quick Start
+
+### Via `eselect-repository`
+
+```shell
+eselect repository add osfordev git https://github.com/osfordev/gentoo-overlay.git
+```
+
+### Manual Repo Config
+
+```shell
+cat <<EOF > /etc/portage/repos.conf/osfordev-repo.conf
+[osfordev]
+location                   = /var/db/repos/osfordev
+sync-type                  = git
+sync-uri                   = https://github.com/osfordev/gentoo-overlay.git
+sync-git-clone-extra-opts  = --single-branch --branch master
+auto-sync                  = yes
+EOF
+```
+
 ## Developer Notes
 
 ### Update kernel configuration
@@ -89,9 +110,9 @@ export PROFILE=H5E56ET#ABU
 export PROFILE=V5_131_0742_V2_21/amd64
 export PROFILE=VirtualBoxGuest/amd64
 export PROFILE=qemu-guest/amd64
-export PROFILE=zxtower00
-export PROFILE=zxtower02
-export PROFILE=zxtower04
+export PROFILE=tw00
+export PROFILE=tw02
+export PROFILE=tw04
 
 # See https://packages.gentoo.org/packages/sys-kernel/gentoo-sources
 export KERNEL_VERSION=6.12.21

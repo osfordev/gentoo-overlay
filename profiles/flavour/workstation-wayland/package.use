@@ -1,9 +1,7 @@
 dev-util/cmake                  -gui -qt5 -qt6
+gui-apps/waybar                 network wifi
+media-libs/libcanberra          -gtk
 media-video/ffmpeg              codec2 lzma speex vpx xvid
 media-video/pipewire            extra
 media-video/vlc                 flac mad udev vpx xml
-
-#
-#  `postproc` - enables additional post processing filters (necessary for mail-client/thunderbird)
-#
-media-libs/libvpx               postproc
+x11-terms/kitty                 transfer

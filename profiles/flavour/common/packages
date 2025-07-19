@@ -5,6 +5,7 @@
 *app-arch/tar
 *app-editors/nano
 *app-editors/vim
+*app-eselect/eselect-repository
 *app-misc/mc
 *app-misc/screen
 *app-portage/gentoolkit

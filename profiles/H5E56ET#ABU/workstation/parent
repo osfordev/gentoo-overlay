@@ -1,4 +1,5 @@
 ..
 ../../flavour/openvpn
 ../../flavour/workstation
+../../flavour/workstation-wayland
 ../../flavour/laptop
