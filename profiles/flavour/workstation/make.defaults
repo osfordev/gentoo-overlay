@@ -30,7 +30,7 @@ USE="
   theora
   v4l
   vorbis
-  wayland
+  vulkan
   webp
   x264
   x265

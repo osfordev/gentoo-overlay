@@ -1,0 +1,9 @@
+*x11-apps/xclock
+*x11-base/xorg-server
+*x11-drivers/xf86-video-fbdev
+*x11-misc/dmenu
+*x11-misc/i3status
+*x11-misc/sddm
+*x11-terms/xterm
+*x11-wm/i3
+*x11-wm/twm

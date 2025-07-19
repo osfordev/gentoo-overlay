@@ -1,0 +1,10 @@
+*app-portage/cpuid2cpuflags
+*sys-apps/dmidecode
+*sys-apps/hdparm
+*sys-apps/smartmontools
+*sys-boot/syslinux
+*sys-firmware/intel-microcode
+*sys-fs/mdadm
+*sys-kernel/dracut
+*sys-kernel/linux-firmware
+*sys-power/thermald

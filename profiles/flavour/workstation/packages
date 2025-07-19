@@ -4,49 +4,56 @@
 # yq - a lightweight and portable command-line YAML processor. https://mikefarah.gitbook.io/yq/
 *app-misc/yq
 
-*gui-apps/grim
-*gui-apps/mako
-*gui-apps/slurp
-*gui-apps/swappy
-*gui-apps/swaylock
+# TUI greeter for greetd login manager https://github.com/apognu/tuigreet
 *gui-apps/tuigreet
-*gui-apps/waybar
 
-# Temporary commented to compilation bug: wayvnc-0.4.0/src/main.c:509:9: error: too few arguments to function ‘nvnc_set_userdata’
-# See https://groups.google.com/g/linux.debian.bugs.dist/c/fTi78yCJmFg
-#*gui-apps/wayvnc
-
-*gui-apps/wf-recorder
-*gui-apps/wl-clipboard
-*gui-libs/display-manager-init
-*gui-libs/xdg-desktop-portal-wlr
-*gui-wm/sway
+# RC init files for starting display and login managers
+#*gui-libs/display-manager-init
 
 *mail-client/thunderbird
 
+# The iconic font https://fontawesome.com
 *media-fonts/fontawesome
 
 # Meta package for fonts to cover most needs
 *media-fonts/fonts-meta
 
+# Google Noto Emoji fonts https://fonts.google.com/noto/specimen/Noto+Color+Emoji
 *media-fonts/noto-emoji
 
+# A fast and lightweight picture viewer for Xfce https://docs.xfce.org/apps/ristretto/start
 *media-gfx/ristretto
 
-# http://0pointer.de/lennart/projects/libcanberra/ - Portable sound event library (used hidden by sway@1.7)
-*media-libs/libcanberra
+# Vulkan Installable Client Driver (ICD) Loader https://github.com/KhronosGroup/Vulkan-Loader
+*media-libs/vulkan-loader
 
+# Advanced Linux Sound Architecture Utils (alsactl, alsamixer, etc.) https://alsa-project.org/wiki/Main_Page
+*media-sound/alsa-utils
+
+# A CLI utility to control media players over MPRIS https://github.com/acrisci/playerctl
 *media-sound/playerctl
+
+# Complete solution to record/convert/stream audio and video https://ffmpeg.org/
+*media-video/ffmpeg
 
 # https://pipewire.org/ - Multimedia processing graphs
 *media-video/pipewire
 
+# v4l2 loopback device whose output is its own input https://github.com/umlaeute/v4l2loopback
+*media-video/v4l2loopback
+
 # https://www.videolan.org/vlc/ - VLC media player
 *media-video/vlc
 
-*net-im/discord
+#*net-im/discord
+
+# Team collaboration tool https://slack.com
 *net-im/slack
+
+# Official desktop client for Telegram https://desktop.telegram.org
 *net-im/telegram-desktop
+
+# Video conferencing and web conferencing service https://zoom.us/
 *net-im/zoom
 
 # A Remote Desktop Protocol Client http://www.rdesktop.org/
@@ -58,23 +65,25 @@
 # https://syncthing.net/ - Syncthing is a continuous file synchronization program.
 *net-p2p/syncthing
 
-*sys-apps/dbus
-*sys-apps/xdg-desktop-portal
+# A fast, easy, and free BitTorrent client https://transmissionbt.com/
+*net-p2p/transmission
 
 *sys-fs/exfatprogs
+
+# An interface for filesystems implemented in userspace https://github.com/libfuse/libfuse
+# Alo we need version 2 of FUSE for AppImages. See https://wiki.gentoo.org/wiki/AppImage
 *sys-fs/fuse
-# Need for AppImage. See https://wiki.gentoo.org/wiki/AppImage
 *sys-fs/fuse:0
+
 *sys-fs/ntfs3g
 
 *virtual/jre
 *www-client/firefox-bin
 *www-client/google-chrome
-# *x11-misc/dmenu
-*x11-misc/rofi
-# *x11-terms/alacritty
-*x11-terms/kitty
-*x11-misc/xdg-user-dirs
+
+# An excellent console-based web browser with ssl support https://lynx.invisible-island.net/
+*www-client/lynx
 
 # GUI File Manager
 *xfce-base/thunar
+
