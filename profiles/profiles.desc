@@ -77,5 +77,6 @@ amd64       lp10/workstation/developer                      stable
 amd64       tw00                                            stable
 amd64       tw00/workstation                                stable
 amd64       tw02                                            stable
+amd64       tw02/workstation                                stable
 amd64       tw04                                            stable
 amd64       tw04/workstation                                stable
