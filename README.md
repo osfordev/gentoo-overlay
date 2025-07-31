@@ -13,6 +13,7 @@ eselect repository add osfordev git https://github.com/osfordev/gentoo-overlay.g
 ### Manual Repo Config
 
 ```shell
+mkdir /etc/portage/repos.conf
 cat <<EOF > /etc/portage/repos.conf/osfordev-repo.conf
 [osfordev]
 location                   = /var/db/repos/osfordev
@@ -21,6 +22,7 @@ sync-uri                   = https://github.com/osfordev/gentoo-overlay.git
 sync-git-clone-extra-opts  = --single-branch --branch master
 auto-sync                  = yes
 EOF
+emerge --sync osfordev
 ```
 
 ## Developer Notes
