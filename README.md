@@ -25,6 +25,41 @@ EOF
 emerge --sync osfordev
 ```
 
+## Additional Configuration
+
+```shell
+eselect profile list
+eselect profile set osfordev:.../.../....
+```
+
+```shell
+emerge --oneshot gentoo-sources
+```
+
+```shell
+cat <<EOF > /etc/env.d/99kernel-config
+# https://www.kernel.org/doc/html/v6.12/kbuild/kconfig.html#environment-variables
+
+#
+# If you set KCONFIG_OVERWRITECONFIG in the environment, Kconfig will
+# not break symlinks when .config is a symlink to somewhere else.
+#
+KCONFIG_OVERWRITECONFIG=y
+
+#
+# This environment variable can be used to specify a default kernel
+# config file name to override the default name of “.config”.
+#
+KCONFIG_CONFIG=/etc/portage/make.profile/kernel.config
+EOF
+
+env-update
+```
+
+```shell
+ln --symbolic /etc/portage/make.profile/kernel.config /usr/src/linux/.config
+```
+
 ## Developer Notes
 
 ### Update kernel configuration
