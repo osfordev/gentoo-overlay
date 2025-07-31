@@ -5,3 +5,4 @@ gentoo:default/linux/amd64/23.0/systemd
 ../flavour/docker
 ../flavour/openvpn
 ../flavour/qemu
+../flavour/tower
