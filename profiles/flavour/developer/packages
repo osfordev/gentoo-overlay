@@ -1,6 +1,7 @@
 *app-editors/vscode
 # *dev-db/mysql-workbench
 *dev-db/postgresql
+*dev-debug/gdb
 *dev-python/pip
 *dev-python/virtualenv
 *dev-util/android-studio
