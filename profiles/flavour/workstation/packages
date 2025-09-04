@@ -45,8 +45,6 @@
 # https://www.videolan.org/vlc/ - VLC media player
 *media-video/vlc
 
-#*net-im/discord
-
 # Team collaboration tool https://slack.com
 *net-im/slack
 
