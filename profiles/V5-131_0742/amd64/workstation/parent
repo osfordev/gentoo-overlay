@@ -1,6 +1,6 @@
 ..
 ../..
 ../../..
-../../../flavour/openvpn
 ../../../flavour/workstation
-../../../flavour/laptop
+../../../flavour/laptop-workstation
+../../../flavour/openvpn
