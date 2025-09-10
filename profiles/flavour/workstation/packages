@@ -10,7 +10,8 @@
 # RC init files for starting display and login managers
 #*gui-libs/display-manager-init
 
-*mail-client/thunderbird
+# Temporary disable due to failure build: https://drone.infra.zxteam.net/osfordev/builder/173/9/5
+#*mail-client/thunderbird
 
 # The iconic font https://fontawesome.com
 *media-fonts/fontawesome
