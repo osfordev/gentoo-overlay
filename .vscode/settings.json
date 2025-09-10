@@ -28,6 +28,9 @@
         "zxtower"
     ],
     "editor.renderWhitespace": "all",
+    "files.associations": {
+        "packages": "text"
+    },
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 5000,
 }
