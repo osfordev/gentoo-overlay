@@ -1,6 +1,5 @@
 ..
 ../../flavour/tower
+../../flavour/openvpn
 ../../flavour/workstation
 ../../flavour/workstation-x11
-../../flavour/virtualbox
-../../flavour/developer
