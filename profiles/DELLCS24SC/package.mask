@@ -1,0 +1,4 @@
+#
+# https://bugs.gentoo.org/959467
+#
+=sys-apps/coreutils-9.7
