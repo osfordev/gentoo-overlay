@@ -1,4 +1,3 @@
-app-misc/yq                     ~amd64 ~arm ~x86
 gui-apps/tuigreet               ~amd64 ~arm ~x86
 net-im/zoom                     ~amd64 ~arm ~x86
 net-im/slack                    ~amd64 ~arm ~x86
