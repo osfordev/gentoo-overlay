@@ -92,6 +92,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       "V5-131_0742/amd64" \
       "virtualbox-guest/amd64" \
       "tw00" \
+      "tw02" \
       "tw04" \
       ; do
         export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_AMD64/kernel.config"
