@@ -36,3 +36,11 @@ USE="
   x265
   xkb
 "
+
+#
+# Add support for MP3 encoding using LAME
+#
+# * ffmpeg's 'mp3' USE was renamed to 'lame', please enable it
+# * if wish to keep the ability to encode using media-sound/lame.
+#
+USE="$USE lame"
