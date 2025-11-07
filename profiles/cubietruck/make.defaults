@@ -1,0 +1,31 @@
+#
+# The Cubietruck (Cubieboard3)
+#   Processor       : ARMv7 Processor rev 4 (v7l)
+#   Features        : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt 
+#   CPU implementer : 0x41
+#   CPU architecture: 7
+#   CPU variant     : 0x0
+#   CPU part        : 0xc07
+#   CPU revision    : 4
+#
+# gcc -march=native -E -v - </dev/null 2>&1 | sed -n 's/.* -v - //p'
+#
+# gcc version 14.3.1 20250801 (Gentoo 14.3.1_p20250801 p4) 
+#
+COMMON_FLAGS=" -O2 -pipe -mfloat-abi=hard -mfpu=vfpv3-d16 -mtls-dialect=gnu -marm -mlibarch=armv7ve+simd -march=armv7ve+simd"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+#
+# https://wiki.gentoo.org/wiki/CPU_FLAGS_X86
+#
+CPU_FLAGS_ARM="edsp neon neon-fp16 thumb vfp vfpv3 vfpv4 vfp-d32 v4 v5 v6 v7 thumb2"
+
+# Two CPUs
+MAKEOPTS="-j2"
+
+#
+# Mali 400 MP2
+#
+VIDEO_CARDS="dummy fbdev"
