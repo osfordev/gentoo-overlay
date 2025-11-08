@@ -1,3 +1,5 @@
+LC_MESSAGES=C.UTF-8
+
 USE="
   ${USE}
   caps
