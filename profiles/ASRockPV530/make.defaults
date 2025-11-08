@@ -27,4 +27,4 @@ MAKEOPTS="-j1"
 # The ASRock PV530 has
 # - VGA compatible controller ???
 #
-#VIDEO_CARDS="???"
+#VIDEO_CARDS="-* ???"

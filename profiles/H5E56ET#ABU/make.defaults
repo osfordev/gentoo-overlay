@@ -35,7 +35,7 @@ MAKEOPTS="-j4"
 #   make.conf: VIDEO_CARDS="intel i965" (MESA i965 is not same as kernel i915. See https://unix.stackexchange.com/questions/618823/why-is-the-mesa-opengl-driver-for-intel-chips-called-i965)
 #   kernel:    CONFIG_EXTRA_FIRMWARE=i915/skl_dmc_ver1_27.bin
 #
-VIDEO_CARDS="intel i965 -amdgpu -dummy -fbdev -nouveau -radeon -radeonsi -v4l -vesa"
+VIDEO_CARDS="-* intel i965"
 
 
 #

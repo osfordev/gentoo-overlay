@@ -21,8 +21,7 @@ MAKEOPTS="-j1"
 #   Kernel driver: ?
 #   kernel:        CONFIG_EXTRA_FIRMWARE="?"
 #
-#VIDEO_CARDS="vmware -amdgpu -radeon -radeonsi -dummy -fbdev -intel -nouveau -v4l -vesa"
-VIDEO_CARDS="vmware"
+VIDEO_CARDS="-* vmware"
 
 
 #

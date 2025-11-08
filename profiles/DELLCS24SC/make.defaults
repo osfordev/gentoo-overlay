@@ -41,7 +41,7 @@ MAKEOPTS="-j8"
 # According to https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers
 #   make.conf: VIDEO_CARDS=""
 #
-VIDEO_CARDS="-amdgpu -dummy -fbdev -intel -nouveau -radeon -radeonsi -v4l -vesa"
+VIDEO_CARDS="-*"
 
 
 #

@@ -32,4 +32,4 @@ CPU_FLAGS_X86="aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 s
 # Digital Ocean Droplet (dg00 at 2023-03-06)
 # - VGA compatible controller: Red Hat, Inc. QXL paravirtual graphic card (rev 04)
 #
-VIDEO_CARDS="qxl"
+VIDEO_CARDS="-* qxl"

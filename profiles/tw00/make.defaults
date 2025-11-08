@@ -27,7 +27,7 @@ MAKEOPTS="-j12"
 # According to https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers
 #   make.conf: VIDEO_CARDS="nvidia"
 #
-VIDEO_CARDS="nvidia -amdgpu -dummy -fbdev -nouveau -radeon -radeonsi -v4l -vesa"
+VIDEO_CARDS="-* nvidia"
 
 #
 # https://wiki.gentoo.org/wiki/QEMU

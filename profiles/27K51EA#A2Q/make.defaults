@@ -36,7 +36,7 @@ MAKEOPTS="-j4"
 #   Kernel driver: amdgpu
 #   kernel:        CONFIG_EXTRA_FIRMWARE="amdgpu/raven2_asd.bin amdgpu/raven2_ce.bin amdgpu/raven2_gpu_info.bin amdgpu/raven2_me.bin amdgpu/raven2_mec.bin amdgpu/raven2_mec2.bin amdgpu/raven2_pfp.bin amdgpu/raven2_rlc.bin amdgpu/raven2_sdma.bin amdgpu/raven2_ta.bin amdgpu/raven2_vcn.bin"
 #
-VIDEO_CARDS="amdgpu radeon radeonsi -dummy -fbdev -intel -nouveau -v4l -vesa"
+VIDEO_CARDS="-* amdgpu radeon radeonsi"
 
 
 #
