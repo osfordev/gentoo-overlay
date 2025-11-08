@@ -28,4 +28,4 @@ MAKEOPTS="-j2"
 #
 # Mali 400 MP2
 #
-VIDEO_CARDS="dummy fbdev"
+VIDEO_CARDS="-* dummy fbdev"
