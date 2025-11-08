@@ -1,2 +1,3 @@
 sys-auth/nss-pam-ldapd         ~arm
+sys-auth/ssh-ldap-pubkey       ~arm
 sys-power/acpid                ~arm
