@@ -3,6 +3,7 @@
 *app-misc/mc
 *app-misc/yq
 *dev-util/gitlab-runner
+*dev-vcs/git
 *dev-vcs/git-lfs
 *net-misc/chrony
 *net-misc/curl
