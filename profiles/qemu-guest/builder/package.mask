@@ -1,0 +1,4 @@
+# Prevent to use oldest version from Gentoo repo
+<dev-vcs/git-lfs-3.7.1
+# Prevent to use newest version from Gentoo repo (force to make package copy)
+>dev-vcs/git-lfs-3.7.1
