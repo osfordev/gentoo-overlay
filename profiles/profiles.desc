@@ -57,6 +57,11 @@ amd64       DigitalOceanDroplet/server/dg00                 stable
 amd64       DigitalOceanDroplet/server/dg04                 stable
 
 # HP Pro Book 6470b
+amd64       F1V06US#ABA                                     stable
+amd64       F1V06US#ABA/workstation                         stable
+amd64       F1V06US#ABA/workstation/developer               stable
+
+# HP Pro Book 6470b
 amd64       H5E56ET#ABU                                     stable
 amd64       H5E56ET#ABU/workstation                         stable
 amd64       H5E56ET#ABU/workstation/developer               stable

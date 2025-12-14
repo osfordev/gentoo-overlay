@@ -1,0 +1,7 @@
+{
+  "blanks-around-fences": {
+    "list_items": false
+  },
+  "line-length": false,
+  "no-hard-tabs": false
+}
