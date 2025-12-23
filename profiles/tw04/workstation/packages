@@ -1,5 +1,6 @@
 *media-libs/libva-intel-driver
 *media-video/obs-studio
+*sys-apps/flatpak
 *sys-firmware/nvidia-firmware
 *x11-drivers/nvidia-drivers
 *x11-apps/igt-gpu-tools
