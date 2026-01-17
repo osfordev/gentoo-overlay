@@ -3,7 +3,7 @@
 ## 2026-01-17
 
 - Не працює звук в flatpak/Sober
-  - переінстальовано `USE="acl flatpak pipewire-alsa sound-server" emerge --ask --newuse --update --deep media-video/pipewire media-video/wireplumber sys-apps/systemd`
+  - переінстальовано `USE="acl extra ffmpeg flatpak pipewire-alsa sound-server v4l" emerge --ask --newuse --update --deep media-video/pipewire media-video/wireplumber sys-apps/systemd`
 - Автоматично не обираеться Sink. `wpctl status` показує
   ```text
     Audio
