@@ -22,6 +22,7 @@ USE="
   mp3
   opengl
   opus
+  policykit
   pulseaudio
   qt5
   qt6
