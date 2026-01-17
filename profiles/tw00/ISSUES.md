@@ -1,5 +1,32 @@
 # ISSUES
 
+## 2026-01-17
+
+- Не працює звук в flatpak/Sober
+  - переінстальовано `USE="acl flatpak pipewire-alsa sound-server" emerge --ask --newuse --update --deep media-video/pipewire media-video/wireplumber sys-apps/systemd`
+- Автоматично не обираеться Sink. `wpctl status` показує
+  ```text
+    Audio
+    ├─ Devices:
+    │      43. GP106 High Definition Audio Controller [alsa]
+    │      44. Built-in Audio                      [alsa]
+    ├─ Sinks:
+    │  *   42. Dummy Output
+  ```
+- `pactl list cards` + `pactl set-card-profile alsa_card.pci-0000_03_00.1  output:hdmi-stereo` + `wpctl set-default 59` встановлює Sinks
+  ```text
+    Audio
+    ├─ Devices:
+    │      43. GP106 High Definition Audio Controller [alsa]
+    │      44. Built-in Audio                      [alsa]
+    ├─ Sinks:
+    │      59. GP106 High Definition Audio Controller Digital Stereo (HDMI) [vol: 1.00]
+  ```
+- CVLC не грає через Pulse
+  - грає через ALSA `cvlc --aout=alsa --alsa-audio-device=hw:1,3 https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3`
+  - Не грає через Pulse `cvlc -vvv --aout=pulse https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3`
+    Під час запуску CVLC статус `pactl list short sinks` залишється в SUSPENDED
+
 ## 2025-10-05 "Заморожений" екран з битими ділянками
 
 ```text
