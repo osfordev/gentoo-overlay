@@ -9,6 +9,7 @@ USE="
   egl
   elogind
   ffmpeg
+  flatpak
   gles2
   gnome-keyring
   gtk

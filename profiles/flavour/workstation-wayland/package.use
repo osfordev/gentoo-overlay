@@ -1,7 +1,3 @@
-dev-util/cmake                  -gui -qt5 -qt6
 gui-apps/waybar                 network wifi
 media-libs/libcanberra          -gtk
-media-video/ffmpeg              codec2 lzma speex vpx xvid
-media-video/pipewire            extra
-media-video/vlc                 flac mad udev vpx xml
 x11-terms/kitty                 transfer

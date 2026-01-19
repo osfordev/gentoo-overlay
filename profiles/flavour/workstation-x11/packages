@@ -1,3 +1,15 @@
+#
+# For i3, you should generally use xdg-desktop-portal-gtk or 
+# xdg-desktop-portal-kde, as they offer broad compatibility with
+# Flatpak/Sandboxed apps, often relying on the GTK or Qt toolkits, with gtk
+# being a common choice for a minimal setup, but you might need to adjust
+# the portal configuration file to explicitly include i3 for them to work
+# seamlessly.
+#
+*sys-apps/xdg-desktop-portal-gtk
+
+*sys-auth/rtkit
+
 *x11-apps/xclock
 *x11-apps/xrandr
 *x11-base/xorg-server

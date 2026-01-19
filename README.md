@@ -173,3 +173,13 @@ make -j$(nproc)
 
 exit
 ```
+
+### Add new target system
+
+Get SKU number
+
+```shell
+emerge --ask --verbose sys-apps/dmidecode
+SKU_NUMBER=$(dmidecode -s system-sku-number)
+echo "SKU Number: ${SKU_NUMBER}"
+```

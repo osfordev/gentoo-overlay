@@ -1,6 +1,11 @@
 dev-util/cmake                  -gui -qt5 -qt6
 media-video/ffmpeg              codec2 lzma speex vpx xvid
-media-video/pipewire            extra
+
+#
+#
+#
+media-video/pipewire            extra pipewire-alsa sound-server
+
 media-video/vlc                 flac mad udev vpx xml
 
 #

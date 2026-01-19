@@ -46,6 +46,20 @@
 # https://www.videolan.org/vlc/ - VLC media player
 *media-video/vlc
 
+#
+# WirePlumber is a modular session / policy manager for PipeWire, enabling
+# functionality such as saving and restoring session state.
+# https://gitlab.freedesktop.org/pipewire/wireplumber
+# More generally, WirePlumber allows one to:
+# - enable devices;
+# - configure devices;
+# - configure client (e.g. application) access control;
+# - configure PipeWire nodes;
+# - manage links between PipeWire nodes;
+# - manage metadata.
+#
+*media-video/wireplumber
+
 # Team collaboration tool https://slack.com
 *net-im/slack
 
@@ -66,6 +80,8 @@
 
 # A fast, easy, and free BitTorrent client https://transmissionbt.com/
 *net-p2p/transmission
+
+*sys-apps/flatpak
 
 *sys-fs/exfatprogs
 
