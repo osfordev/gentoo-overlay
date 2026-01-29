@@ -21,8 +21,6 @@
 *sys-apps/dbus
 *sys-apps/xdg-desktop-portal
 
-# *x11-misc/dmenu
-*x11-misc/rofi
 # *x11-terms/alacritty
 *x11-terms/kitty
 *x11-misc/xdg-user-dirs

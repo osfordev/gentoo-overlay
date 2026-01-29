@@ -99,5 +99,11 @@
 # An excellent console-based web browser with ssl support https://lynx.invisible-island.net/
 *www-client/lynx
 
+# A generic, highly customizable, and efficient menu for the X Window System https://tools.suckless.org/dmenu/
+*x11-misc/dmenu
+
+# A window switcher, run dialog and dmenu replacement https://github.com/davatorium/rofi 
+*x11-misc/rofi
+
 # GUI File Manager
 *xfce-base/thunar
