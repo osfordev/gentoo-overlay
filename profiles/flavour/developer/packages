@@ -5,5 +5,5 @@
 *dev-python/pip
 *dev-python/virtualenv
 *dev-util/android-studio
-*dev-util/idea-community
+# *dev-util/idea-community
 *dev-vcs/git-lfs
