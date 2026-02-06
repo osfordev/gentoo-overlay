@@ -1,2 +1,6 @@
 net-misc/curl       ldap
 net-nds/openldap    overlays
+#
+# Migrating to Nftables
+#
+sys-apps/iproute2   -iptables
