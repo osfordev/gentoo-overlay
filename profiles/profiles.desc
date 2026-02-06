@@ -25,6 +25,7 @@ x86         ASRockPV530/bootsrv                             stable
 
 # Cubietruck
 arm         cubietruck                                      stable
+arm         cubietruck/gateway                              stable
 
 # HP 255 G8
 amd64       27K51EA#A2Q                                     stable
