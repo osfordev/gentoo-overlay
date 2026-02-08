@@ -1,5 +1,5 @@
 ..
-../../flavour/server
+../../flavour/server/amd64
 ../../flavour/docker
 ../../flavour/openvpn
 ../../flavour/qemu
