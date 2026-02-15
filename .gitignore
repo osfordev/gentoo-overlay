@@ -1,3 +1,4 @@
+.build/
 tmp/
 *.local.*
 .DS_Store

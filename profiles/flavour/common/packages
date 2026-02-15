@@ -16,6 +16,10 @@
 *net-analyzer/tcpdump
 *net-analyzer/traceroute
 *net-dns/bind-tools
+#
+# A framework for managing DNS information https://roy.marples.name/projects/openresolv
+#
+*net-dns/openresolv
 *net-firewall/nftables
 *net-misc/dhcpcd
 #

@@ -62,7 +62,7 @@ ln --symbolic /etc/portage/make.profile/kernel.config /usr/src/linux/.config
 
 ## Developer Notes
 
-### Update kernel configuration
+### Update `config-latest-gentoo`
 
 Basically we hold on fixed versions of gentoo-sources (via mask.packages).
 As result we have to update kernel configurations for each profile to be up to date.
@@ -74,10 +74,8 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/amd64 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:amd64-6.12.58
+      theanurin/gentoo-sources-bundle:amd64-6.17.13
 
-    cd /data/profiles
-    PROFILES_DIR=$(pwd)
     for PROFILE_AMD64 in \
       "27K51EA#A2Q" \
       "B2G18EC#ABA" \
@@ -95,9 +93,13 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       "tw02" \
       "tw04" \
       ; do
-        export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_AMD64/kernel.config"
+        PROFILE_DIR="/data/profiles/$PROFILE_AMD64"
+        cp --dereference "${PROFILE_DIR}/config-latest-gentoo" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo"
+        export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo"
         echo "Updating $PROFILE_AMD64 ..."
         (cd /usr/src/linux && make oldconfig && rm -f "${KCONFIG_CONFIG}.old")
+        rm "${PROFILE_DIR}/config-latest-gentoo"
+        ln --symbolic "config-${KERNEL_VERSION}-gentoo" "${PROFILE_DIR}/config-latest-gentoo"
     done
     ```
 - Arch: arm32v7
@@ -105,17 +107,19 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/arm/v7 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:arm32v7-6.12.58
+      theanurin/gentoo-sources-bundle:arm32v7-6.17.13
 
-    cd /data/profiles
-    PROFILES_DIR=$(pwd)
     for PROFILE_ARM32V7 in \
       "cubietruck" \
       "qemu-guest/builder/arm32v7" \
       ; do
-        export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_ARM32V7/kernel.config"
+        PROFILE_DIR="/data/profiles/$PROFILE_ARM32V7"
+        cp --dereference "${PROFILE_DIR}/config-latest-gentoo" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo"
+        export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo"
         echo "Updating $PROFILE_ARM32V7 ..."
         (cd /usr/src/linux && make oldconfig && rm -f "${KCONFIG_CONFIG}.old")
+        rm "${PROFILE_DIR}/config-latest-gentoo"
+        ln --symbolic "config-${KERNEL_VERSION}-gentoo" "${PROFILE_DIR}/config-latest-gentoo"
     done
     ```
 - Arch: x86
@@ -123,17 +127,19 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/386 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:i686-6.12.58
+      theanurin/gentoo-sources-bundle:i686-6.17.13
 
-    cd /data/profiles
-    PROFILES_DIR=$(pwd)
     for PROFILE_X86 in \
       "ASRockPV530" \
       "V5-131_0742/x86" \
       ; do
-        export KCONFIG_CONFIG="$PROFILES_DIR/$PROFILE_X86/kernel.config"
+        PROFILE_DIR="/data/profiles/$PROFILE_X86"
+        cp --dereference "${PROFILE_DIR}/config-latest-gentoo" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo"
+        export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo"
         echo "Updating $PROFILE_X86 ..."
         (cd /usr/src/linux && make oldconfig && rm -f "${KCONFIG_CONFIG}.old")
+        rm "${PROFILE_DIR}/config-latest-gentoo"
+        ln --symbolic "config-${KERNEL_VERSION}-gentoo" "${PROFILE_DIR}/config-latest-gentoo"
     done
     ```
 
@@ -163,10 +169,11 @@ docker run --rm --interactive --tty \
   --mount type=bind,source="${PWD}/profiles/${PROFILE}",target=/data \
   "theanurin/gentoo-sources-bundle:amd64-${KERNEL_VERSION}"
 
-ln -s /data/kernel.config .config
+ln -s /data/config-${KERNEL_VERSION}-gentoo .config
 make menuconfig
 
 emerge-webrsync
+emerge --oneshot sys-firmware/intel-microcode sys-kernel/linux-firmware
 FEATURES="-ipc-sandbox -network-sandbox -pid-sandbox" ACCEPT_LICENSE="*" emerge --oneshot sys-firmware/intel-microcode sys-kernel/linux-firmware
 
 make -j$(nproc)
