@@ -1,5 +1,8 @@
 *app-metrics/node_exporter
 
+# TCP, UDP, and SCTP network bandwidth measurement tool https://software.es.net/iperf/
+*net-misc/iperf
+
 # Utility to change hard drive performance parameters https://sourceforge.net/projects/hdparm/
 *sys-apps/hdparm
 

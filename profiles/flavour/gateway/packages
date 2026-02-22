@@ -1,0 +1,5 @@
+# Point-to-Point Protocol (PPP) https://ppp.samba.org/
+*net-dialup/ppp
+
+# 802.1Q vlan control utility http://www.candelatech.com/~greear/vlan.html
+*net-misc/vconfig
