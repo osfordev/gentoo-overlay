@@ -1,0 +1,4 @@
+# On Windows XP (CNC6040Z), we use the latest workable version, v1.0.1, of Syncthing.
+# Version v1.0.1 is not able to establish a connection with Syncthing v2+.
+# Therefore, we are stuck on v1.29.5 as a bridge that allows connections between v1.0.1 and v2+.
+>net-p2p/syncthing-1.29.5
