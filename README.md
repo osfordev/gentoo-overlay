@@ -74,7 +74,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/amd64 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:amd64-6.17.13
+      theanurin/gentoo-sources-bundle:amd64-6.18.12
 
     for PROFILE_AMD64 in \
       "27K51EA#A2Q" \
@@ -93,10 +93,10 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       "tw02" \
       "tw04" \
       ; do
-        PROFILE_DIR="/data/profiles/$PROFILE_AMD64"
+        PROFILE_DIR="/data/profiles/${PROFILE_AMD64}"
         cp --dereference "${PROFILE_DIR}/config-latest-gentoo" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo"
         export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo"
-        echo "Updating $PROFILE_AMD64 ..."
+        echo "Updating ${PROFILE_AMD64} ..."
         (cd /usr/src/linux && make oldconfig && rm -f "${KCONFIG_CONFIG}.old")
         rm "${PROFILE_DIR}/config-latest-gentoo"
         ln --symbolic "config-${KERNEL_VERSION}-gentoo" "${PROFILE_DIR}/config-latest-gentoo"
@@ -107,16 +107,16 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/arm/v7 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:arm32v7-6.17.13
+      theanurin/gentoo-sources-bundle:arm32v7-6.18.12
 
     for PROFILE_ARM32V7 in \
       "cubietruck" \
       "qemu-guest/builder/arm32v7" \
       ; do
-        PROFILE_DIR="/data/profiles/$PROFILE_ARM32V7"
+        PROFILE_DIR="/data/profiles/${PROFILE_ARM32V7}"
         cp --dereference "${PROFILE_DIR}/config-latest-gentoo" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo"
         export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo"
-        echo "Updating $PROFILE_ARM32V7 ..."
+        echo "Updating ${PROFILE_ARM32V7} ..."
         (cd /usr/src/linux && make oldconfig && rm -f "${KCONFIG_CONFIG}.old")
         rm "${PROFILE_DIR}/config-latest-gentoo"
         ln --symbolic "config-${KERNEL_VERSION}-gentoo" "${PROFILE_DIR}/config-latest-gentoo"
@@ -127,7 +127,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/386 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:i686-6.17.13
+      theanurin/gentoo-sources-bundle:i686-6.18.12
 
     for PROFILE_X86 in \
       "ASRockPV530" \
@@ -189,4 +189,51 @@ Get SKU number
 emerge --ask --verbose sys-apps/dmidecode
 SKU_NUMBER=$(dmidecode -s system-sku-number)
 echo "SKU Number: ${SKU_NUMBER}"
+```
+
+### Build Cubietruck
+
+```shell
+KERNEL_VERSION=6.17.13
+
+docker run --rm --interactive --tty \
+      --platform linux/arm/v7 \
+      --env KBUILD_OUTPUT="/kernel-build-cache" \
+      --volume kernel-build-cache-gentoo-${KERNEL_VERSION}:/kernel-build-cache \
+      --mount type=bind,source="${PWD}",target=/data \
+      theanurin/gentoo-sources-bundle:arm32v7-${KERNEL_VERSION}
+
+export KCONFIG_CONFIG=/data/profiles/cubietruck/config-${KERNEL_VERSION}-gentoo
+
+sed --in-place 's~label = "cubietruck:blue:usr";~label = "cubietruck:blue:usr"; default-state = "on";~g' arch/arm/boot/dts/allwinner/sun7i-a20-cubietruck.dts
+sed --in-place 's~label = "cubietruck:orange:usr";~label = "cubietruck:orange:usr"; default-state = "off"; linux,default-trigger = "heartbeat";~g' arch/arm/boot/dts/allwinner/sun7i-a20-cubietruck.dts
+sed --in-place 's~label = "cubietruck:white:usr";~label = "cubietruck:white:usr"; default-state = "off"; linux,default-trigger = "heartbeat";~g' arch/arm/boot/dts/allwinner/sun7i-a20-cubietruck.dts
+sed --in-place 's~label = "cubietruck:green:usr";~label = "cubietruck:green:usr"; default-state = "off"; linux,default-trigger = "heartbeat";~g' arch/arm/boot/dts/allwinner/sun7i-a20-cubietruck.dts
+
+make menuconfig \
+  && make -j$(nproc) zImage modules dtbs \
+  && rm --recursive --force "/data/.build/cubietruck-${KERNEL_VERSION}/boot/${KERNEL_VERSION}-gentoo" \
+  && rm --recursive --force "/data/.build/cubietruck-${KERNEL_VERSION}/lib/modules/${KERNEL_VERSION}-gentoo-cubietruck" \
+  && rm --force "/data/.build/cubietruck-${KERNEL_VERSION}/boot/boot" \
+  && rm --force "/data/.build/cubietruck-${KERNEL_VERSION}/boot/current" \
+  && rm --force "/data/.build/cubietruck-${KERNEL_VERSION}/boot/zImage" \
+  && rm --force "/data/.build/cubietruck-${KERNEL_VERSION}/boot/sun7i-a20-cubietruck.dtb" \
+  && rm --force "/data/.build/cubietruck-${KERNEL_VERSION}/boot/config" \
+  && rm --force "/data/.build/cubietruck-${KERNEL_VERSION}/boot/System.map" \
+  && mkdir --parents "/data/.build/cubietruck-${KERNEL_VERSION}/boot/${KERNEL_VERSION}-gentoo" \
+  && make INSTALL_MOD_PATH="/data/.build/cubietruck-${KERNEL_VERSION}" modules_install \
+  && cp --archive arch/arm/boot/zImage                                  "/data/.build/cubietruck-${KERNEL_VERSION}/boot/${KERNEL_VERSION}-gentoo/zImage-${KERNEL_VERSION}-gentoo" \
+  && cp --archive arch/arm/boot/dts/allwinner/sun7i-a20-cubietruck.dtb  "/data/.build/cubietruck-${KERNEL_VERSION}/boot/${KERNEL_VERSION}-gentoo/sun7i-a20-cubietruck-${KERNEL_VERSION}-gentoo.dtb" \
+  && cp --archive "${KCONFIG_CONFIG}"                                   "/data/.build/cubietruck-${KERNEL_VERSION}/boot/${KERNEL_VERSION}-gentoo/config-${KERNEL_VERSION}-gentoo" \
+  && cp --archive System.map                                            "/data/.build/cubietruck-${KERNEL_VERSION}/boot/${KERNEL_VERSION}-gentoo/System-${KERNEL_VERSION}-gentoo.map" \
+  && ln --symbolic "zImage-${KERNEL_VERSION}-gentoo"                    "/data/.build/cubietruck-${KERNEL_VERSION}/boot/${KERNEL_VERSION}-gentoo/zImage" \
+  && ln --symbolic "sun7i-a20-cubietruck-${KERNEL_VERSION}-gentoo.dtb"  "/data/.build/cubietruck-${KERNEL_VERSION}/boot/${KERNEL_VERSION}-gentoo/sun7i-a20-cubietruck.dtb" \
+  && ln --symbolic "config-${KERNEL_VERSION}-gentoo"                    "/data/.build/cubietruck-${KERNEL_VERSION}/boot/${KERNEL_VERSION}-gentoo/config" \
+  && ln --symbolic "System-${KERNEL_VERSION}-gentoo.map"                "/data/.build/cubietruck-${KERNEL_VERSION}/boot/${KERNEL_VERSION}-gentoo/System.map" \
+  && ln --symbolic         "."                                          "/data/.build/cubietruck-${KERNEL_VERSION}/boot/boot" \
+  && ln --symbolic         "${KERNEL_VERSION}-gentoo"                   "/data/.build/cubietruck-${KERNEL_VERSION}/boot/current" \
+  && ln --symbolic --force "current/zImage"                             "/data/.build/cubietruck-${KERNEL_VERSION}/boot/zImage" \
+  && ln --symbolic --force "current/sun7i-a20-cubietruck.dtb"           "/data/.build/cubietruck-${KERNEL_VERSION}/boot/sun7i-a20-cubietruck.dtb" \
+  && ln --symbolic --force "current/config"                             "/data/.build/cubietruck-${KERNEL_VERSION}/boot/config" \
+  && ln --symbolic --force "current/System.map"                         "/data/.build/cubietruck-${KERNEL_VERSION}/boot/System.map"
 ```
