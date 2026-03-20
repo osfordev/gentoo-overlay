@@ -1,4 +1,4 @@
 ../../amd64
 ..
-../../../flavour/docker
-../../../flavour/gitlab-runner/amd64
+../../../../flavours/docker
+../../../../flavours/gitlab-runner/amd64

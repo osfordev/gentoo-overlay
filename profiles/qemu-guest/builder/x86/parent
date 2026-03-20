@@ -1,4 +1,4 @@
 ../../x86
 ..
-../../../flavour/docker
-../../../flavour/gitlab-runner/x86
+../../../../flavours/docker
+../../../../flavours/gitlab-runner/x86

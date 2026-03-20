@@ -1,0 +1,32 @@
+#
+# The Orange PI Zero
+#   Processor	: ARMv7 Processor rev 5 (v7l)
+#   BogoMIPS	: 48.00
+#   Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm 
+#   CPU implementer	: 0x41
+#   CPU architecture: 7
+#   CPU variant	: 0x0
+#   CPU part	: 0xc07
+#   CPU revision	: 5
+#
+# gcc -march=native -E -v - </dev/null 2>&1 | sed -n 's/.* -v - //p'
+#
+# gcc version ??.?.? ....
+#
+COMMON_FLAGS=" ?"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+#
+# https://wiki.gentoo.org/wiki/CPU_FLAGS_X86
+#
+CPU_FLAGS_ARM="edsp neon neon-fp16 thumb vfp vfpv3 vfpv4 vfp-d32 v4 v5 v6 v7 thumb2"
+
+# Four CPUs
+MAKEOPTS="-j4"
+
+#
+# No video any card
+#
+VIDEO_CARDS="-* dummy"

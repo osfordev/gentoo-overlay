@@ -1,7 +1,7 @@
 ..
 ../..
 ../../..
-../../../flavour/laptop-workstation
-../../../flavour/openvpn
-../../../flavour/workstation
-../../../flavour/workstation-wayland
+../../../../flavours/laptop-workstation
+../../../../flavours/openvpn
+../../../../flavours/workstation
+../../../../flavours/workstation-wayland

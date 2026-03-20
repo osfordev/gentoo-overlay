@@ -1,4 +1,4 @@
 ..
-../../flavour/dhcp
-../../flavour/server/arm32v7
-../../flavour/gateway
+../../../flavours/dhcp
+../../../flavours/server/arm32v7
+../../../flavours/gateway

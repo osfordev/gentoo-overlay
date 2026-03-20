@@ -1,8 +1,8 @@
 gentoo:default/linux/x86/17.1/systemd
 ..
 ../..
-../../flavour/common/x86
-../../flavour/laptop
-../../flavour/laptop-workstation
-../../flavour/workstation
-../../flavour/workstation-wayland
+../../../flavours/common/x86
+../../../flavours/laptop
+../../../flavours/laptop-workstation
+../../../flavours/workstation
+../../../flavours/workstation-wayland

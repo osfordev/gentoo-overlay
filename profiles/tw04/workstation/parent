@@ -1,5 +1,5 @@
 ..
-../../flavour/tower
-../../flavour/openvpn
-../../flavour/workstation
-../../flavour/workstation-x11
+../../../flavours/tower
+../../../flavours/openvpn
+../../../flavours/workstation
+../../../flavours/workstation-x11
