@@ -1,1 +1,9 @@
+#
+# A framework for managing DNS information https://roy.marples.name/projects/openresolv
+#
+*net-dns/openresolv
+
+#
+# Cronie is a standard UNIX daemon cron based on the original vixie-cron https://github.com/cronie-crond/cronie
+#
 *sys-process/cronie

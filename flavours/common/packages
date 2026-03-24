@@ -16,33 +16,47 @@
 *net-analyzer/tcpdump
 *net-analyzer/traceroute
 *net-dns/bind-tools
+
 #
-# A framework for managing DNS information https://roy.marples.name/projects/openresolv
+# Linux kernel firewall, NAT and packet mangling tools https://netfilter.org/projects/nftables/
 #
-*net-dns/openresolv
 *net-firewall/nftables
+
+#
+# A fully featured, yet light weight RFC2131 compliant DHCP client https://github.com/NetworkConfiguration/dhcpcd/
+#
 *net-misc/dhcpcd
+
 #
 # Providing essential network tools such as ping, ping6, arping, and tracepath
 # for network diagnostics and monitoring, essentially offering lightweight,
 # fundamental utilities for checking connectivity and routing across IPv4 and IPv6 networks. 
 #
 *net-misc/iputils
+
+#
+# Network Time Protocol suite/programs https://www.ntp.org/
+#
 *net-misc/ntp
+
 *net-misc/openssh
 *net-misc/socat
 *net-misc/telnet-bsd
 *net-nds/openldap
+
 #
 # Provides powerful command-line tools (like the ip command) for managing
 # Linux networking, replacing older tools like ifconfig and netstat, and offering
 # advanced features for routing, traffic control, and handling both IPv4 and IPv6.
 #
 *sys-apps/iproute2
+
 *sys-apps/pciutils
 *sys-apps/pv
 
+#
 # It monitors a set of entropy sources, and supplies entropy from them to the system kernel's /dev/random machinery. See https://github.com/nhorman/rng-tools
+#
 *sys-apps/rng-tools
 
 *sys-apps/usbutils
