@@ -1,6 +1,5 @@
 gentoo:default/linux/x86/17.1/systemd
 ..
-../..
 ../../../flavours/common/x86
 ../../../flavours/laptop
 ../../../flavours/laptop-workstation

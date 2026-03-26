@@ -1,6 +1,5 @@
 gentoo:default/linux/amd64/23.0
 ..
-../..
 ../../../flavours/common/amd64
 ../../../flavours/common-openrc/amd64
 ../../../flavours/laptop

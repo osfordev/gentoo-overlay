@@ -1,23 +1,23 @@
 #arch       profile_directory                               status
 
 # Virtual Box Guest
-amd64       virtualbox-guest/amd64                          stable
-arm         virtualbox-guest/arm                            stable
-x86         virtualbox-guest/x86                            stable
+amd64       virtualboxguest/amd64                           stable
+arm         virtualboxguest/arm                             stable
+x86         virtualboxguest/x86                             stable
 
 # Qemu Guest
-amd64       qemu-guest/amd64                                stable
-arm         qemu-guest/arm32v7                              stable
-x86         qemu-guest/x86                                  stable
-amd64       qemu-guest/builder/amd64                        stable
-arm         qemu-guest/builder/arm32v7                      stable
-x86         qemu-guest/builder/x86                          stable
+amd64       qemuguest/amd64                                 stable
+arm         qemuguest/arm32v7                               stable
+x86         qemuguest/x86                                   stable
+amd64       qemuguest/builder/amd64                         stable
+arm         qemuguest/builder/arm32v7                       stable
+x86         qemuguest/builder/x86                           stable
 
-# Acer V5-131_0742
-amd64       V5-131_0742/amd64                               stable
-amd64       V5-131_0742/amd64/workstation                   stable
-amd64       V5-131_0742/amd64/workstation/developer         stable
-x86         V5-131_0742/x86                                 stable
+# Acer V5_131_0742
+amd64       V5_131_0742/amd64                               stable
+amd64       V5_131_0742/amd64/workstation                   stable
+amd64       V5_131_0742/amd64/workstation/developer         stable
+x86         V5_131_0742/x86                                 stable
 
 # ASRock PV530
 x86         ASRockPV530                                     stable
