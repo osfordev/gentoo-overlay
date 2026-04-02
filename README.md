@@ -74,9 +74,9 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/amd64 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:amd64-6.18.12
+      theanurin/gentoo-sources-bundle:amd64-6.18.18
 
-    for PROFILE_AMD64 in \
+    for PROFILE_BUNDLE in \
       "27K51EA#A2Q" \
       "B2G18EC#ABA" \
       "C3C58ES#AKD" \
@@ -84,33 +84,35 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       "DELLCS24SC" \
       "DigitalOceanDroplet" \
       "H5E56ET#ABU" \
-      "qemu-guest/builder/amd64" \
-      "V5-131_0742/amd64" \
-      "virtualbox-guest/amd64" \
+      "qemuguest/builder/amd64:qemuguestbuilder" \
+      "V5_131_0742/amd64:V5_131_0742" \
+      "virtualboxguest/amd64:virtualboxguest" \
       "tw00" \
       "tw02" \
       "tw04" \
       ; do
-        PROFILE_DIR="/data/profiles/${PROFILE_AMD64}"
-        cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_AMD64}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_AMD64}"
-        export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_AMD64}"
-        echo "Updating ${PROFILE_AMD64} ..."
-        ./scripts/config --file "${KCONFIG_CONFIG}" --enable "EXPERT"
+        PROFILE_DIR="/data/profiles/$(echo ${PROFILE_BUNDLE} | cut -d: -f1)"
+        PROFILE_NAME="$(echo ${PROFILE_BUNDLE} | cut -d: -f2)"
+        cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
+        export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
+        echo "Updating ${PROFILE_NAME} in ${PROFILE_DIR} ..."
         make oldconfig
-        rm "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_AMD64}"
-        ln --symbolic "config-${KERNEL_VERSION}-gentoo-${PROFILE_AMD64}" "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_AMD64}"
+        rm "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
+        ln --symbolic "config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
     done
+
+
     ```
 - Arch: arm32v7
     ```shell
     docker run --rm --interactive --tty \
       --platform linux/arm/v7 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:arm32v7-6.18.12
+      theanurin/gentoo-sources-bundle:arm32v7-6.18.18
 
     for PROFILE_ARM32V7 in \
       "cubietruck" \
-      "qemu-guest/builder/arm32v7" \
+      "qemuguest/builder/arm32v7" \
       ; do
         PROFILE_DIR="/data/profiles/${PROFILE_ARM32V7}"
         cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_ARM32V7}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_ARM32V7}"
@@ -126,11 +128,11 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     docker run --rm --interactive --tty \
       --platform linux/386 \
       --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:i686-6.18.12
+      theanurin/gentoo-sources-bundle:i686-6.18.18
 
     for PROFILE_X86 in \
       "ASRockPV530" \
-      "V5-131_0742/x86" \
+      "V5_131_0742/x86" \
       ; do
         PROFILE_DIR="/data/profiles/${PROFILE_X86}"
         cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_X86}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_X86}"
