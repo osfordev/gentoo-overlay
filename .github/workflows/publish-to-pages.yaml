@@ -1,0 +1,60 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - dev
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Generate Metadata Cache
+        run: |
+          docker run \
+            --rm \
+            --volume "${{ github.workspace }}:/var/db/repos/osfordev" \
+            theanurin/gentoo-sources-bundle \
+              /bin/bash --command "emerge-webrsync && egencache --repo=osfordev --update --jobs=$(nproc)"
+
+      - name: Create Snapshot
+        run: |
+          zip \
+            --recurse-paths public/latest.zip \
+            . \
+            --exclude "./.git/*" "./.github/*" "./public/*" ".markdownlint.json" "LICENSE" "NOTICE" "README.md" "TODO.md" 
+
+          mkdir public/metadata
+          cp metadata/layout.conf public/metadata/layout.conf
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
