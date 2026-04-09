@@ -128,9 +128,16 @@
 
         <section class="section">
             <h2>Configure</h2>
+            <pre class="language-shell"><code>cat &lt;&lt;EOF &gt; /etc/portage/repos.conf/default.conf
+[gentoo]
+location = /var/db/repos/gentoo
+priority = 0 
+eclass-overrides = osfordev
+sync-type = webrsync
+EOF</code></pre>
 
             <h3>As <code>zipfile</code></h3>
-            <pre class="language-shell"><code>cat &lt;&lt;EOF &gt; /etc/portage/repos.conf/osfordev-repo.conf
+            <pre class="language-shell"><code>cat &lt;&lt;EOF &gt; /etc/portage/repos.conf/osfordev.conf
 [osfordev]
 location = /var/db/repos/osfordev
 # Higher priority (default gentoo is -1000) ensures that our ebuilds take precedence in case of version collisions.
@@ -141,7 +148,7 @@ auto-sync = yes
 EOF</code></pre>
 
             <h3>As <code>git</code></h3>
-            <pre class="language-shell"><code>cat &lt;&lt;EOF &gt; /etc/portage/repos.conf/osfordev-repo.conf
+            <pre class="language-shell"><code>cat &lt;&lt;EOF &gt; /etc/portage/repos.conf/osfordev.conf
 [osfordev]
 location = /var/db/repos/osfordev
 # Higher priority (default gentoo is -1000) ensures that our ebuilds take precedence in case of version collisions.

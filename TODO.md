@@ -1,10 +1,9 @@
 # ToDos
 
-1. 2025-09-18
+1. 2026-04-09
 
     ```text
-    * Install additional packages for optional runtime features:
-    *   kde-frameworks/kimageformats:6[avif,heif,jpegxl] for AVIF, HEIF and JpegXL image support
+    IMPORTANT: config file '/etc/issue' needs updating.
     ```
 
 1. 2023-02-23

@@ -14,15 +14,31 @@ eselect repository add osfordev git https://github.com/osfordev/gentoo-overlay.g
 
 ```shell
 mkdir /etc/portage/repos.conf
-cat <<EOF > /etc/portage/repos.conf/osfordev-repo.conf
-[osfordev]
-location                   = /var/db/repos/osfordev
-sync-type                  = git
-sync-uri                   = https://github.com/osfordev/gentoo-overlay.git
-sync-git-clone-extra-opts  = --single-branch --branch master
-auto-sync                  = yes
+
+cat <<EOF > /etc/portage/repos.conf/default.conf
+[gentoo]
+location = /var/db/repos/gentoo
+priority = 0 
+eclass-overrides = osfordev
+sync-type = webrsync
 EOF
-emerge --sync osfordev
+
+cat <<EOF > /etc/portage/repos.conf/osfordev.conf
+[osfordev]
+location = /var/db/repos/osfordev
+# Higher priority (default gentoo is -1000) ensures that our ebuilds take precedence in case of version collisions.
+priority = 50
+auto-sync = yes
+
+sync-type = zipfile
+sync-uri = https://osfordev.github.io/gentoo-overlay/latest.zip
+
+#sync-type = git
+#sync-uri = https://github.com/osfordev/gentoo-overlay.git
+#sync-git-clone-extra-opts = --single-branch --branch dev
+EOF
+
+emerge --sync
 ```
 
 ## Additional Configuration
