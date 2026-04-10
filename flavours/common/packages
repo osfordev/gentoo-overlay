@@ -11,6 +11,11 @@
 *app-portage/gentoolkit
 
 #
+# Lists directories recursively, and produces an indented listing of files https://oldmanprogrammer.net/source.php?dir=projects/tree
+#
+*app-text/tree
+
+#
 # Binary-based Rust (to decrease build time and prevent Rust compilation issues like https://bugs.gentoo.org/809212)
 #
 *dev-lang/rust-bin
