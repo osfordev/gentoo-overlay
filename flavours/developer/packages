@@ -6,4 +6,13 @@
 *dev-python/virtualenv
 *dev-util/android-studio
 # *dev-util/idea-community
+
+#
+# Distributed VCS designed for speed and efficiency https://www.git-scm.com/
+#
+*dev-vcs/git
+
+#
+# Command line extension and specification for managing large files with git https://git-lfs.com
+#
 *dev-vcs/git-lfs

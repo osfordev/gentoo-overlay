@@ -3,8 +3,17 @@
 *app-misc/mc
 *app-misc/yq
 *dev-util/gitlab-runner
+
+#
+# Distributed VCS designed for speed and efficiency https://www.git-scm.com/
+#
 *dev-vcs/git
+
+#
+# Command line extension and specification for managing large files with git https://git-lfs.com
+#
 *dev-vcs/git-lfs
+
 *net-misc/chrony
 *net-misc/curl
 *sys-fs/dosfstools
