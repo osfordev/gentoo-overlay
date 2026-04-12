@@ -93,25 +93,25 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       theanurin/gentoo-sources-bundle:amd64-6.18.18
 
     for PROFILE_BUNDLE in \
-      "27K51EA#A2Q" \
-      "B2G18EC#ABA" \
-      "C3C58ES#AKD" \
-      "D4H65EC#AKD" \
-      "DELLCS24SC" \
-      "DigitalOceanDroplet" \
-      "H5E56ET#ABU" \
+      "27K51EA#A2Q:27K51EA#A2Q" \
+      "B2G18EC#ABA:B2G18EC#ABA" \
+      "C3C58ES#AKD:C3C58ES#AKD" \
+      "D4H65EC#AKD:D4H65EC#AKD" \
+      "DELLCS24SC:DELLCS24SC" \
+      "DigitalOceanDroplet:DigitalOceanDroplet" \
+      "H5E56ET#ABU:H5E56ET#ABU" \
       "qemuguest/builder/amd64:qemuguestbuilder" \
       "V5_131_0742/amd64:V5_131_0742" \
       "virtualboxguest/amd64:virtualboxguest" \
-      "tw00" \
-      "tw02" \
-      "tw04" \
+      "tw00:tw00" \
+      "tw02:tw02" \
+      "tw04:tw04" \
       ; do
         PROFILE_DIR="/data/profiles/$(echo ${PROFILE_BUNDLE} | cut -d: -f1)"
         PROFILE_NAME="$(echo ${PROFILE_BUNDLE} | cut -d: -f2)"
-        cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
         export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
-        echo "Updating ${PROFILE_NAME} in ${PROFILE_DIR} ..."
+        cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
+        echo "Updating ${KCONFIG_CONFIG} ..."
         make oldconfig
         rm "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
         ln --symbolic "config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
@@ -126,17 +126,18 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       --mount type=bind,source="${PWD}",target=/data \
       theanurin/gentoo-sources-bundle:arm32v7-6.18.18
 
-    for PROFILE_ARM32V7 in \
-      "cubietruck" \
-      "qemuguest/builder/arm32v7" \
+    for PROFILE_BUNDLE in \
+      "cubietruck:cubietruck" \
+      "qemuguest/builder/arm32v7:qemuguestbuilder" \
       ; do
-        PROFILE_DIR="/data/profiles/${PROFILE_ARM32V7}"
-        cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_ARM32V7}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_ARM32V7}"
-        export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_ARM32V7}"
-        echo "Updating ${PROFILE_ARM32V7} ..."
-        (cd /usr/src/linux && make oldconfig && rm -f "${KCONFIG_CONFIG}.old")
-        rm "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_ARM32V7}"
-        ln --symbolic "config-${KERNEL_VERSION}-gentoo-${PROFILE_ARM32V7}" "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_ARM32V7}"
+        PROFILE_DIR="/data/profiles/$(echo ${PROFILE_BUNDLE} | cut -d: -f1)"
+        PROFILE_NAME="$(echo ${PROFILE_BUNDLE} | cut -d: -f2)"
+        export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
+        cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
+        echo "Updating ${KCONFIG_CONFIG} ..."
+        make oldconfig
+        rm "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
+        ln --symbolic "config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
     done
     ```
 - Arch: x86
@@ -146,17 +147,18 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       --mount type=bind,source="${PWD}",target=/data \
       theanurin/gentoo-sources-bundle:i686-6.18.18
 
-    for PROFILE_X86 in \
-      "ASRockPV530" \
-      "V5_131_0742/x86" \
+    for PROFILE_BUNDLE in \
+      "ASRockPV530:ASRockPV530" \
+      "V5_131_0742/x86:V5_131_0742" \
       ; do
-        PROFILE_DIR="/data/profiles/${PROFILE_X86}"
-        cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_X86}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_X86}"
-        export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-$PROFILE_X86"
-        echo "Updating ${PROFILE_X86} ..."
-        (cd /usr/src/linux && make oldconfig && rm -f "${KCONFIG_CONFIG}.old")
-        rm "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_X86}"
-        ln --symbolic "config-${KERNEL_VERSION}-gentoo-${PROFILE_X86}" "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_X86}"
+        PROFILE_DIR="/data/profiles/$(echo ${PROFILE_BUNDLE} | cut -d: -f1)"
+        PROFILE_NAME="$(echo ${PROFILE_BUNDLE} | cut -d: -f2)"
+        export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
+        cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
+        echo "Updating ${KCONFIG_CONFIG} ..."
+        make oldconfig
+        rm "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
+        ln --symbolic "config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
     done
     ```
 
