@@ -1,3 +1,1 @@
-<app-misc/jq-2                   ~arm
-<app-misc/yq-4                  **
-<dev-go/gox-2                   ~arm
+dev-go/gox      ~arm

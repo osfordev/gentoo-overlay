@@ -1,20 +1,4 @@
-*app-editors/nano
-*app-misc/jq
-*app-misc/mc
-*app-misc/yq
+#
+# The official GitLab Runner, written in Go https://gitlab.com/gitlab-org/gitlab-runner
+#
 *dev-util/gitlab-runner
-
-#
-# Distributed VCS designed for speed and efficiency https://www.git-scm.com/
-#
-*dev-vcs/git
-
-#
-# Command line extension and specification for managing large files with git https://git-lfs.com
-#
-*dev-vcs/git-lfs
-
-*net-misc/curl
-*sys-fs/dosfstools
-*sys-fs/squashfs-tools
-*sys-process/htop
