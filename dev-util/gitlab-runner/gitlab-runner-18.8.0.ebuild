@@ -1,15 +1,15 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 #
-# Original file: https://github.com/gentoo/gentoo/blob/4d32f7a8839e1f416e68041bd9c2b3a7afeea159/dev-util/gitlab-runner/gitlab-runner-18.6.2.ebuild
+# Original file: https://github.com/gentoo/gentoo/blob/9591a552634986613aff8317e74e7b83fd15e144/dev-util/gitlab-runner/gitlab-runner-18.8.0.ebuild
 #
 
 EAPI=8
-inherit eapi9-ver go-module systemd toolchain-funcs tmpfiles
+inherit eapi9-ver go-module systemd tmpfiles
 
 # make sure this gets updated for every bump
-GIT_COMMIT=83dc1e70
+GIT_COMMIT=9ffb4aa0
 
 DESCRIPTION="The official GitLab Runner, written in Go"
 HOMEPAGE="https://gitlab.com/gitlab-org/gitlab-runner"

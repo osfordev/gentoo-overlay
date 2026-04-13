@@ -1,15 +1,15 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 #
-# Original file: https://github.com/gentoo/gentoo/blob/4d32f7a8839e1f416e68041bd9c2b3a7afeea159/dev-util/gitlab-runner/gitlab-runner-18.6.2.ebuild
+# Original file: https://github.com/gentoo/gentoo/blob/ac32221ac957abb145c505449820bb5eee4e72a7/dev-util/gitlab-runner/gitlab-runner-18.7.2.ebuild
 #
 
 EAPI=8
-inherit eapi9-ver go-module systemd toolchain-funcs tmpfiles
+inherit eapi9-ver go-module systemd tmpfiles
 
 # make sure this gets updated for every bump
-GIT_COMMIT=83dc1e70
+GIT_COMMIT=1c855082
 
 DESCRIPTION="The official GitLab Runner, written in Go"
 HOMEPAGE="https://gitlab.com/gitlab-org/gitlab-runner"
@@ -20,7 +20,7 @@ S="${WORKDIR}/${PN}-v${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="amd64 arm arm64 ~ppc64 ~riscv x86"
+KEYWORDS="amd64 ~ppc64 ~riscv"
 
 COMMON_DEPEND="acct-group/gitlab-runner
 	acct-user/gitlab-runner"
@@ -29,14 +29,6 @@ RDEPEND="${COMMON_DEPEND}"
 BDEPEND="dev-go/gox"
 
 src_compile() {
-	# Go's internal linker does not support -buildmode=pie on 32-bit ARM.
-	# Since GOFLAGS includes -buildmode=pie, we must enable CGO to allow 
-	# external linking, otherwise the build fails.
-	if [[ "$(tc-arch)" == "arm" ]]; then
-		# avoid error: -buildmode=pie requires external (cgo) linking, but cgo is not enabled
-		export CGO_ENABLED=1
-	fi
-
 	emake \
 		BUILT="$(date -u '+%Y-%m-%dT%H:%M:%S%:z')" \
 		GOX="${EPREFIX}/usr/bin/gox" \

@@ -14,7 +14,6 @@
 #
 *dev-vcs/git-lfs
 
-*net-misc/chrony
 *net-misc/curl
 *sys-fs/dosfstools
 *sys-fs/squashfs-tools
