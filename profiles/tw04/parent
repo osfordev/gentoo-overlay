@@ -1,7 +1,4 @@
 gentoo:default/linux/amd64/23.0/systemd
 ../../flavours/common/amd64
 ../../flavours/common-systemd/amd64
-../../flavours/docker
-../../flavours/openvpn
-../../flavours/qemu
 ../../flavours/tower

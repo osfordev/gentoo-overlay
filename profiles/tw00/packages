@@ -1,13 +1,1 @@
-#
-# NVIDIA container runtime toolkit https://github.com/NVIDIA/container-toolkit
-#
-*app-containers/nvidia-container-toolkit
-
-*app-portage/cpuid2cpuflags
-*sys-apps/dmidecode
-*sys-boot/syslinux
-*sys-firmware/intel-microcode
-*sys-fs/mdadm
-*sys-kernel/dracut
-*sys-kernel/linux-firmware
 *sys-power/thermald
