@@ -1,3 +1,11 @@
+# Modern GUI toolkits (e.g., Qt6 in VirtualBox 7.2+) and media stacks
+# now enforce a hybrid backend model. 
+# - 'X' is required for legacy compatibility and XWayland support.
+# - 'wayland' is increasingly mandated by ebuilds as a REQUIRED_USE 
+#   dependency for toolkit initialization, even when running under X11.
+# This dual-flag setup ensures broad hardware acceleration support 
+# and prevents dependency backtracking in rolling-release profiles.
 USE="
+  X
   wayland
 "

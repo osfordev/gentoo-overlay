@@ -1,5 +1,4 @@
 USE="
-  X
   a52
   alsa
   alsa-plugin
