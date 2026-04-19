@@ -5,8 +5,7 @@
 #
 *net-misc/iperf
 
-# Utility to change hard drive performance parameters https://sourceforge.net/projects/hdparm/
-*sys-apps/hdparm
-
-# Tools to monitor storage systems to provide advanced warning of disk degradation https://www.smartmontools.org
-*sys-apps/smartmontools
+#
+# Tool for running RAID systems - replacement for the raidtools https://github.com/md-raid-utilities/mdadm
+#
+*sys-fs/mdadm

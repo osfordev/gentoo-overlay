@@ -1,4 +1,5 @@
 gentoo:default/linux/x86/23.0
 ../../flavours/common/x86
 ../../flavours/common-openrc/x86
+../../flavours/diskaware
 ../../flavours/server/x86

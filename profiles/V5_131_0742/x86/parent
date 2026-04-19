@@ -1,6 +1,7 @@
 gentoo:default/linux/x86/17.1/systemd
 ..
 ../../../flavours/common/x86
+../../../flavours/diskaware
 ../../../flavours/laptop
 ../../../flavours/laptop-workstation
 ../../../flavours/workstation

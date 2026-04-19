@@ -1,0 +1,7 @@
+#
+# Utility to change hard drive performance parameters https://sourceforge.net/projects/hdparm/
+#
+*sys-apps/hdparm
+
+# Tools to monitor storage systems to provide advanced warning of disk degradation https://www.smartmontools.org
+*sys-apps/smartmontools
