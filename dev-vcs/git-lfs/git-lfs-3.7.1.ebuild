@@ -54,11 +54,12 @@ DOCS=(
 )
 
 src_compile() {
+	# Go's internal linker does not support -buildmode=pie on 32-bit ARM.
+	# Since GOFLAGS includes -buildmode=pie, we must enable CGO to allow 
+	# external linking, otherwise the build fails.
 	if [[ "$(tc-arch)" == "arm" ]]; then
-		# -buildmode=pie requires external (cgo) linking, but cgo is not enabled
+		# avoid error: -buildmode=pie requires external (cgo) linking, but cgo is not enabled
 		export CGO_ENABLED=1
-	else
-		export CGO_ENABLED=0
 	fi
 
 	# Flags -w, -s: Omit debugging information to reduce binary size,
