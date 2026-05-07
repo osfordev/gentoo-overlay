@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm 6.18.18-gentoo Kernel Configuration
+# Linux/arm 6.18.26-gentoo Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (Gentoo 15.2.1_p20260214 p5) 15.2.1 20260214"
 CONFIG_CC_IS_GCC=y
