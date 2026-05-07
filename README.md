@@ -18,7 +18,7 @@ mkdir /etc/portage/repos.conf
 cat <<EOF > /etc/portage/repos.conf/default.conf
 [gentoo]
 location = /var/db/repos/gentoo
-priority = 0 
+priority = 0
 eclass-overrides = osfordev
 sync-type = webrsync
 EOF
@@ -86,81 +86,83 @@ As result we have to update kernel configurations for each profile to be up to d
 Use following snippet to apply `make oldconfig` for each kernel configuration
 
 - Arch: amd64
-    ```shell
-    docker run --rm --interactive --tty \
-      --platform linux/amd64 \
-      --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:amd64-6.18.18
+  ```shell
+  docker run --rm --interactive --tty \
+    --platform linux/amd64 \
+    --mount type=bind,source="${PWD}",target=/data \
+    theanurin/gentoo-sources-bundle:amd64-6.18.26
 
-    for PROFILE_BUNDLE in \
-      "27K51EA#A2Q:27K51EA#A2Q" \
-      "B2G18EC#ABA:B2G18EC#ABA" \
-      "C3C58ES#AKD:C3C58ES#AKD" \
-      "D4H65EC#AKD:D4H65EC#AKD" \
-      "DELLCS24SC:DELLCS24SC" \
-      "DigitalOceanDroplet:DigitalOceanDroplet" \
-      "H5E56ET#ABU:H5E56ET#ABU" \
-      "qemuguest/builder/amd64:qemuguestbuilder" \
-      "V5_131_0742/amd64:V5_131_0742" \
-      "virtualboxguest/amd64:virtualboxguest" \
-      "tw00:tw00" \
-      "tw02:tw02" \
-      "tw04:tw04" \
-      ; do
-        PROFILE_DIR="/data/profiles/$(echo ${PROFILE_BUNDLE} | cut -d: -f1)"
-        PROFILE_NAME="$(echo ${PROFILE_BUNDLE} | cut -d: -f2)"
-        export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
-        cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
-        echo "Updating ${KCONFIG_CONFIG} ..."
-        make oldconfig
-        rm "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
-        ln --symbolic "config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
-    done
+  for PROFILE_BUNDLE in \
+    "27K51EA#A2Q:27K51EA#A2Q" \
+    "B2G18EC#ABA:B2G18EC#ABA" \
+    "C3C58ES#AKD:C3C58ES#AKD" \
+    "D4H65EC#AKD:D4H65EC#AKD" \
+    "DELLCS24SC:DELLCS24SC" \
+    "DigitalOceanDroplet:DigitalOceanDroplet" \
+    "H5E56ET#ABU:H5E56ET#ABU" \
+    "qemuguest/builder/amd64:qemuguestbuilder" \
+    "V5_131_0742/amd64:V5_131_0742" \
+    "virtualboxguest/amd64:virtualboxguest" \
+    "tw00:tw00" \
+    "tw02:tw02" \
+    "tw04:tw04" \
+    ; do
+      PROFILE_DIR="/data/profiles/$(echo ${PROFILE_BUNDLE} | cut -d: -f1)"
+      PROFILE_NAME="$(echo ${PROFILE_BUNDLE} | cut -d: -f2)"
+      export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
+      cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
+      echo "Updating ${KCONFIG_CONFIG} ..."
+      make oldconfig
+      rm "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
+      ln --symbolic "config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
+  done
 
 
-    ```
+  ```
 - Arch: arm32v7
-    ```shell
-    docker run --rm --interactive --tty \
-      --platform linux/arm/v7 \
-      --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:arm32v7-6.18.18
+  ```shell
+  docker run --rm --interactive --tty \
+    --platform linux/arm/v7 \
+    --mount type=bind,source="${PWD}",target=/data \
+    theanurin/gentoo-sources-bundle:arm32v7-6.18.26
 
-    for PROFILE_BUNDLE in \
-      "cubietruck:cubietruck" \
-      "qemuguest/builder/arm32v7:qemuguestbuilder" \
-      ; do
-        PROFILE_DIR="/data/profiles/$(echo ${PROFILE_BUNDLE} | cut -d: -f1)"
-        PROFILE_NAME="$(echo ${PROFILE_BUNDLE} | cut -d: -f2)"
-        export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
-        cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
-        echo "Updating ${KCONFIG_CONFIG} ..."
-        make oldconfig
-        rm "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
-        ln --symbolic "config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
-    done
-    ```
+  for PROFILE_BUNDLE in \
+    "cubietruck:cubietruck" \
+    "qemuguest/builder/arm32v7:qemuguestbuilder" \
+    ; do
+      PROFILE_DIR="/data/profiles/$(echo ${PROFILE_BUNDLE} | cut -d: -f1)"
+      PROFILE_NAME="$(echo ${PROFILE_BUNDLE} | cut -d: -f2)"
+      export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
+      cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
+      echo "Updating ${KCONFIG_CONFIG} ..."
+      make oldconfig
+      rm "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
+      ln --symbolic "config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
+  done
+  ```
 - Arch: x86
-    ```shell
-    docker run --rm --interactive --tty \
-      --platform linux/386 \
-      --mount type=bind,source="${PWD}",target=/data \
-      theanurin/gentoo-sources-bundle:i686-6.18.18
+  ```shell
+  docker run --rm --interactive --tty \
+    --platform linux/386 \
+    --mount type=bind,source="${PWD}",target=/data \
+    theanurin/gentoo-sources-bundle:i686-6.18.26
 
-    for PROFILE_BUNDLE in \
-      "ASRockPV530:ASRockPV530" \
-      "V5_131_0742/x86:V5_131_0742" \
-      ; do
-        PROFILE_DIR="/data/profiles/$(echo ${PROFILE_BUNDLE} | cut -d: -f1)"
-        PROFILE_NAME="$(echo ${PROFILE_BUNDLE} | cut -d: -f2)"
-        export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
-        cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
-        echo "Updating ${KCONFIG_CONFIG} ..."
-        make oldconfig
-        rm "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
-        ln --symbolic "config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
-    done
-    ```
+  for PROFILE_BUNDLE in \
+    "ASRockPV530:ASRockPV530" \
+    "qemuguest/builder/x86:qemuguestbuilder" \
+    "V5_131_0742/x86:V5_131_0742" \
+    "virtualboxguest/x86:virtualboxguest" \
+    ; do
+      PROFILE_DIR="/data/profiles/$(echo ${PROFILE_BUNDLE} | cut -d: -f1)"
+      PROFILE_NAME="$(echo ${PROFILE_BUNDLE} | cut -d: -f2)"
+      export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
+      cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
+      echo "Updating ${KCONFIG_CONFIG} ..."
+      make oldconfig
+      rm "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
+      ln --symbolic "config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
+  done
+  ```
 
 ### Test kernel build via Docker
 
