@@ -99,6 +99,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
     "D4H65EC#AKD:D4H65EC#AKD" \
     "DELLCS24SC:DELLCS24SC" \
     "DigitalOceanDroplet:DigitalOceanDroplet" \
+    "F1V06US#ABA:F1V06US#ABA" \
     "H5E56ET#ABU:H5E56ET#ABU" \
     "qemuguest/builder/amd64:qemuguestbuilder" \
     "V5_131_0742/amd64:V5_131_0742" \
