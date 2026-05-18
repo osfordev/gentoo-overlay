@@ -1,4 +1,1 @@
 gentoo:default/linux/arm/23.0/armv7a_hf
-../../flavours/common/armv7a
-../../flavours/common-openrc/armv7a
-../../flavours/diskaware
