@@ -24,6 +24,7 @@ USE="
   opus
   policykit
   pulseaudio
+  qml
   qt5
   qt6
   screencast
