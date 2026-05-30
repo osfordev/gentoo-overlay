@@ -1,0 +1,4 @@
+#
+# Reference implementation of Matrix homeserver https://matrix.org/
+#
+*net-im/synapse
