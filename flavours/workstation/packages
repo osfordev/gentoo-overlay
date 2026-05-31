@@ -64,7 +64,7 @@
 *net-im/slack
 
 # Official desktop client for Telegram https://desktop.telegram.org
-*net-im/telegram-desktop
+#*net-im/telegram-desktop
 
 # Video conferencing and web conferencing service https://zoom.us/
 *net-im/zoom
