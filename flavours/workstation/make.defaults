@@ -30,6 +30,7 @@ USE="
   screencast
   svg
   theora
+  truetype
   v4l
   vorbis
   vulkan
