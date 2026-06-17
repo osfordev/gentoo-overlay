@@ -1,0 +1,7 @@
+#
+# gcc -march=native -Q --help=target | grep march
+#
+CFLAGS="-O2 -pipe -march=skylake-avx512"
+CXXFLAGS="${CFLAGS}"
+FCFLAGS="${CFLAGS}"
+FFLAGS="${CFLAGS}"
