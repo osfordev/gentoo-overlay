@@ -16,3 +16,8 @@
 # Command line extension and specification for managing large files with git https://git-lfs.com
 #
 *dev-vcs/git-lfs
+
+#
+# MTD userspace tools (NFTL, JFFS2, NAND, FTL, UBI) http://www.linux-mtd.infradead.org/
+#
+sys-fs/mtd-utils
