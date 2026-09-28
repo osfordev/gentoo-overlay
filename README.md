@@ -111,11 +111,9 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       PROFILE_DIR="/data/profiles/$(echo ${PROFILE_BUNDLE} | cut -d: -f1)"
       PROFILE_NAME="$(echo ${PROFILE_BUNDLE} | cut -d: -f2)"
       export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
-      cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
       echo "Updating ${KCONFIG_CONFIG} ..."
+      ./scripts/config --file "${KCONFIG_CONFIG}" --disable CONFIG_RT_GROUP_SCHED
       make oldconfig
-      rm "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
-      ln --symbolic "config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
   done
 
 
