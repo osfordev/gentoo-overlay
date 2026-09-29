@@ -1,7 +1,18 @@
 *app-admin/logrotate
 *app-admin/sudo
 *app-admin/syslog-ng
-*app-arch/p7zip
+
+#
+# Free file archiver for extremely high compression https://www.7-zip.org/
+#
+*app-arch/7zip
+
+# Sam James <sam@gentoo.org> (2026-07-16)
+# Outdated and replaced by app-arch/7zip. Many unfixed bugs including
+# severe vulnerabilities.
+# Removal on 2026-08-15.  Bug #942397.
+#*app-arch/p7zip
+
 *app-arch/tar
 *app-editors/nano
 *app-editors/vim
