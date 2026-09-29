@@ -34,7 +34,19 @@
 *net-analyzer/netcat
 *net-analyzer/tcpdump
 *net-analyzer/traceroute
-*net-dns/bind-tools
+
+# Sam James <sam@gentoo.org> (2026-07-16)
+# Stub since Bind 9.18. Maintaining a separate build just for the client
+# binaries proved brittle and unsustainable (see discussion in
+# bug #832218 for details). Please use net-dns/bind instead. Other options
+# include net-dns/cares-tools, net-libs/ldns's drill, and net-dns/doggo.
+# Removal on 2026-08-15.  Bug #977172.
+#*net-dns/bind-tools
+
+#
+# Berkeley Internet Name Domain - Name Server https://www.isc.org/bind/
+#
+*net-dns/bind
 
 #
 # Linux kernel firewall, NAT and packet mangling tools https://netfilter.org/projects/nftables/
