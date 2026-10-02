@@ -90,7 +90,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
   docker run --rm --interactive --tty \
     --platform linux/amd64 \
     --mount type=bind,source="${PWD}",target=/data \
-    theanurin/gentoo-sources-bundle:amd64-6.18.26
+    theanurin/gentoo-sources-bundle:amd64-6.18.52
 
   for PROFILE_BUNDLE in \
     "27K51EA#A2Q:27K51EA#A2Q" \
@@ -123,7 +123,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
   docker run --rm --interactive --tty \
     --platform linux/arm/v7 \
     --mount type=bind,source="${PWD}",target=/data \
-    theanurin/gentoo-sources-bundle:arm32v7-6.18.26
+    theanurin/gentoo-sources-bundle:arm32v7-6.18.52
 
   for PROFILE_BUNDLE in \
     "cubietruck:cubietruck" \
@@ -144,7 +144,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
   docker run --rm --interactive --tty \
     --platform linux/386 \
     --mount type=bind,source="${PWD}",target=/data \
-    theanurin/gentoo-sources-bundle:i686-6.18.26
+    theanurin/gentoo-sources-bundle:i686-6.18.52
 
   for PROFILE_BUNDLE in \
     "ASRockPV530:ASRockPV530" \
