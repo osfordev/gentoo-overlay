@@ -1,0 +1,4 @@
+#
+# GTX 1050Ti is deprecated and was removed in v570.
+#
+>=x11-drivers/nvidia-drivers-570

@@ -1,0 +1,4 @@
+#
+# GTX 1060 is deprecated and was removed in v581
+#
+>=x11-drivers/nvidia-drivers-581
