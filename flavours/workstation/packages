@@ -7,7 +7,8 @@
 # TUI greeter for greetd login manager https://github.com/apognu/tuigreet
 *gui-apps/tuigreet
 
-# RC init files for starting display and login managers
+# OpenRC init files for starting display and login managers
+# This one is not needed for systemd
 #*gui-libs/display-manager-init
 
 # Temporary disable due to failure build: https://drone.infra.zxteam.net/osfordev/builder/173/9/5

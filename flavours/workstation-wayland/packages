@@ -11,7 +11,11 @@
 
 *gui-apps/wf-recorder
 *gui-apps/wl-clipboard
+
+# OpenRC init files for starting display and login managers
+# This one is temporary needed for the flavour due to it OpenRC-based
 *gui-libs/display-manager-init
+
 *gui-libs/xdg-desktop-portal-wlr
 *gui-wm/sway
 
