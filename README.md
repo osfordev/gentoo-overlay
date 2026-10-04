@@ -111,9 +111,12 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       PROFILE_DIR="/data/profiles/$(echo ${PROFILE_BUNDLE} | cut -d: -f1)"
       PROFILE_NAME="$(echo ${PROFILE_BUNDLE} | cut -d: -f2)"
       export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
+      [ ! -f "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}" ] && cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
       echo "Updating ${KCONFIG_CONFIG} ..."
       ./scripts/config --file "${KCONFIG_CONFIG}" --disable CONFIG_RT_GROUP_SCHED
       make oldconfig
+      rm "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
+      ln --symbolic "config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
   done
 
 
@@ -132,7 +135,7 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
       PROFILE_DIR="/data/profiles/$(echo ${PROFILE_BUNDLE} | cut -d: -f1)"
       PROFILE_NAME="$(echo ${PROFILE_BUNDLE} | cut -d: -f2)"
       export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
-      cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
+      [ ! -f "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}" ] && cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
       echo "Updating ${KCONFIG_CONFIG} ..."
       make oldconfig
       rm "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
@@ -149,13 +152,14 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
   for PROFILE_BUNDLE in \
     "ASRockPV530:ASRockPV530" \
     "qemuguest/builder/x86:qemuguestbuilder" \
+    "UB02370561/x86:UB02370561" \
     "V5_131_0742/x86:V5_131_0742" \
     "virtualboxguest/x86:virtualboxguest" \
     ; do
       PROFILE_DIR="/data/profiles/$(echo ${PROFILE_BUNDLE} | cut -d: -f1)"
       PROFILE_NAME="$(echo ${PROFILE_BUNDLE} | cut -d: -f2)"
       export KCONFIG_CONFIG="${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
-      cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
+      [ ! -f "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}" ] && cp --dereference "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}" "${PROFILE_DIR}/config-${KERNEL_VERSION}-gentoo-${PROFILE_NAME}"
       echo "Updating ${KCONFIG_CONFIG} ..."
       make oldconfig
       rm "${PROFILE_DIR}/config-latest-gentoo-${PROFILE_NAME}"
@@ -165,39 +169,28 @@ Use following snippet to apply `make oldconfig` for each kernel configuration
 
 ### Test kernel build via Docker
 
+#### Test `i686` kernel build via Docker
+
 ```shell
-# Choose one of
-export PROFILE=27K51EA#A2Q
-export PROFILE=B2G18EC#ABA
-export PROFILE=C3C58ES#AKD
-export PROFILE=D4H65EC#AKD
-export PROFILE=DigitalOceanDroplet
-export PROFILE=H5E56ET#ABU
-export PROFILE=V5_131_0742_V2_21/amd64
-export PROFILE=VirtualBoxGuest/amd64
-export PROFILE=qemu-guest/amd64
-export PROFILE=tw00
-export PROFILE=tw02
-export PROFILE=tw04
-
-# See https://packages.gentoo.org/packages/sys-kernel/gentoo-sources
-export KERNEL_VERSION=6.12.58
-
 docker run --rm --interactive --tty \
-  --platform linux/amd64 \
+  --platform linux/386 \
   --env KCONFIG_OVERWRITECONFIG=y \
   --env PROFILE \
-  --mount type=bind,source="${PWD}/profiles/${PROFILE}",target=/data \
-  "theanurin/gentoo-sources-bundle:amd64-${KERNEL_VERSION}"
+  --mount type=bind,source="${PWD}",target=/data \
+  --volume "gentoo-sources-bundle-cache":/cache \
+  theanurin/gentoo-sources-bundle:i686-6.18.52
 
-ln -s /data/config-${KERNEL_VERSION}-gentoo-${PROFILE} .config
+export KCONFIG_CONFIG="/data/profiles/UB02370561/x86/config-6.18.52-gentoo-UB02370561"
+export KBUILD_OUTPUT="/cache"
+
 make menuconfig
-
-emerge-webrsync
-emerge --oneshot sys-firmware/intel-microcode sys-kernel/linux-firmware
-FEATURES="-ipc-sandbox -network-sandbox -pid-sandbox" ACCEPT_LICENSE="*" emerge --oneshot sys-firmware/intel-microcode sys-kernel/linux-firmware
-
-make -j$(nproc)
+make -j$(nproc) && make modules
+INSTALL_MOD_PATH="${KCONFIG_CONFIG}.modules" make modules_install
+mkdir "${KCONFIG_CONFIG}.boot"
+cp -aL /cache/arch/x86/boot/bzImage  "${KCONFIG_CONFIG}.boot/bzImage-6.18.52-gentoo-UB02370561"
+cp -aL /cache/System.map             "${KCONFIG_CONFIG}.boot/System-6.18.52.map-gentoo-UB02370561"
+cp -aL "${KCONFIG_CONFIG}"           "${KCONFIG_CONFIG}.boot/config-6.18.52-gentoo-UB02370561"
+(cd "${KCONFIG_CONFIG}.modules" && tar -czvpf "${KCONFIG_CONFIG}.modules.tar.gz" *)
 
 exit
 ```
