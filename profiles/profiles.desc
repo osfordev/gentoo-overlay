@@ -70,7 +70,11 @@ amd64       H5E56ET#ABU                                     stable
 amd64       H5E56ET#ABU/workstation                         stable
 amd64       H5E56ET#ABU/workstation/developer               stable
 
-# Hosts
+# Lenovo IdeaPad Flex 10
+x86         UB02370561/x86                                  stable
+x86         UB02370561/x86/workstation                      stable
+
+# By Hosts
 amd64       lp00/workstation/developer                      stable
 amd64       lp01/workstation/developer                      stable
 amd64       lp02/workstation/developer                      stable
@@ -82,7 +86,11 @@ amd64       lp07/workstation/developer                      stable
 amd64       lp08/workstation/developer                      stable
 amd64       lp09/workstation/developer                      stable
 amd64       lp10/workstation/developer                      stable
-
+amd64       lp0c/amd64                                      stable
+amd64       lp0c/amd64/workstation                          stable
+amd64       lp0c/amd64/workstation/developer                stable
+x86         lp0d/x86                                        stable
+x86         lp0d/x86/workstation                            stable
 amd64       tw00                                            stable
 amd64       tw00/workstation                                stable
 amd64       tw00/workstation/developer                      stable
