@@ -2,4 +2,4 @@
 ../../../../flavours/laptop-workstation
 ../../../../flavours/openvpn
 ../../../../flavours/workstation
-../../../../flavours/workstation-wayland
+../../../../flavours/workstation-systemd
