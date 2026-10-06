@@ -38,7 +38,7 @@ VIDEO_CARDS="-* intel i965"
 # QEMU_USER_TARGETS - userspace emulation targets https://ftp.fau.de/gentoo-portage/profiles/desc/qemu_user_targets.desc
 #
 QEMU_SOFTMMU_TARGETS="aarch64 arm i386 x86_64"
-QEMU_USER_TARGETS="i386 x86_64"
+QEMU_USER_TARGETS="aarch64 arm i386 x86_64"
 
 
 #

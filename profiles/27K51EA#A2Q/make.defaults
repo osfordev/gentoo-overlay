@@ -39,7 +39,7 @@ VIDEO_CARDS="-* amdgpu radeon radeonsi"
 # QEMU_USER_TARGETS - userspace emulation targets https://ftp.fau.de/gentoo-portage/profiles/desc/qemu_user_targets.desc
 #
 QEMU_SOFTMMU_TARGETS="aarch64 arm i386 x86_64"
-QEMU_USER_TARGETS="i386 x86_64"
+QEMU_USER_TARGETS="aarch64 arm i386 x86_64"
 
 #
 # The HP 255 G8 27K51EA#A2Q has
