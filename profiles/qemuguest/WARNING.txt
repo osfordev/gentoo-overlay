@@ -1,0 +1,1 @@
+This profiles do not use "common" flavour to be minimal

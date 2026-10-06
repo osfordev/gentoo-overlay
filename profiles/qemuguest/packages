@@ -1,5 +1,11 @@
 *app-arch/tar
 *app-editors/nano
+
+#
+# QEMU Guest Agent (qemu-ga) for use when running inside a VM https://wiki.qemu.org/Features/GuestAgent
+#
+*app-emulation/qemu-guest-agent
+
 *app-misc/mc
 *net-misc/dhcpcd
 *net-misc/openssh
