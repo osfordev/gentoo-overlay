@@ -61,14 +61,20 @@
 #
 *media-video/wireplumber
 
+# A glossy Matrix collaboration client for desktop (binary package) https://element.io
+#*net-im/element-desktop-bin
+
 # Team collaboration tool https://slack.com
-*net-im/slack
+# Commented due to not supported in x86
+#*net-im/slack
 
 # Official desktop client for Telegram https://desktop.telegram.org
+# Commented due to not supported in x86
 #*net-im/telegram-desktop
 
 # Video conferencing and web conferencing service https://zoom.us/
-*net-im/zoom
+# Commented due to not supported in x86
+#*net-im/zoom
 
 # A Remote Desktop Protocol Client http://www.rdesktop.org/
 *net-misc/rdesktop
