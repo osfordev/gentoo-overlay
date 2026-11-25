@@ -5,3 +5,5 @@ CFLAGS="-O2 -pipe -march=skylake"
 CXXFLAGS="${CFLAGS}"
 FCFLAGS="${CFLAGS}"
 FFLAGS="${CFLAGS}"
+
+MAKEOPTS="-j2"

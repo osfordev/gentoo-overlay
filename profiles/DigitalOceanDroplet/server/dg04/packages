@@ -1,4 +1,9 @@
 #
+# coturn TURN server project https://github.com/coturn/coturn
+#
+*net-im/coturn
+
+#
 # Reference implementation of Matrix homeserver https://matrix.org/
 #
 *net-im/synapse
